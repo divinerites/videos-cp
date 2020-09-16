@@ -1,2 +1,5 @@
 github.com/divinerites/plausible-hugo v1.6.0 h1:hd76kMMuzN4Qvj+6PVX8CgUJKS+BZjt+DnXTiIT2Kj8=
 github.com/divinerites/plausible-hugo v1.6.0/go.mod h1:cxr+YB3FUwbLon8KCs4pV4Ankbkq6lJxTQUpNb5KqPo=
+github.com/gohugoio/hugo-mod-bootstrap-scss-v4 v0.0.0-20200902213320-c9cb5e39d8c6 h1:Neo6xDvmZMV41d4kmbjv9ZCYuqzbITl8R/4t6Aeng5A=
+github.com/gohugoio/hugo-mod-bootstrap-scss-v4 v0.0.0-20200902213320-c9cb5e39d8c6/go.mod h1:dAcE2kCmCarbiwNTV4xxlDFShQHiok9kDjw1VoN2J8g=
+github.com/twbs/bootstrap v4.5.2+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=
