@@ -1,0 +1,21 @@
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ site.Title }}</title>
+		<meta name="description" content="{{ with site.Params.description }}{{ . }}{{ end }}" />
+		<meta name="keywords" content="{{ with site.Params.keywords }}{{ . }}{{ end }}" />
+		<meta name="author" content="{{ with site.Params.author }}{{ . }}{{ end }}" />
+		<link rel="icon" href="{{ site.Params.BaseURL }}favicon.ico" />
+		{{ hugo.Generator }}
+		<style>
+		body {
+		background: {{ site.Params.bodybgcolor }};
+		color: {{ site.Params.bodytextcolor }};
+		}
+		</style>
+		<link rel="stylesheet" type="text/css" href="{{ site.BaseURL }}css/default.css" />
+		<link rel="stylesheet" type="text/css" href="{{ site.BaseURL }}css/component.css" />
+		{{ range site.Params.custom_css }}
+			<link rel="stylesheet" href="{{ . }}">
+		{{ end }}
+		<script src="{{ site.BaseURL }}js/modernizr.custom.js"></script>

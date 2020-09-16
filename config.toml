@@ -1,0 +1,36 @@
+# Site settings
+baseurl = "https://cp-videos.netlify.app/"
+languageCode = "fr-fr"
+title = "CP Vidéos : catalogue de vidéos de Poker live"
+theme = ["hugrid-2020"]
+
+# Configuration des folders
+contentdir  = "content"
+datadir     = "data"
+layoutdir   = "layouts"
+publishdir  = "public"
+
+[params]
+   # Meta
+   title = "CP Vidéos : catalogue de vidéos de Poker live"
+   subtitle = "Catalogue de vidéos de poker live préservée et présentée via Club Poker"
+   author = "Divinerites"
+   description = "Catalogue de vidéos de poker live préservée et présentée via Club Poker"
+   keywords = "Hugo, Poker, Vidéos, ClubPoker, EPT, WSOP, WPT"
+
+   # Body background color
+   bodybgcolor = "#f9f9f9"
+
+   # Preview container button text
+   buttontext = "Charger la vidéo"
+
+   # Footer text
+   footertext = "Made with"
+
+   # Dates
+   dateFormat = "2 Jan 2006"
+   dateFormatFull = "02/01/2006"
+   dateFormatTime = "2 Jan 2006 15:04"
+
+   # add extra-css
+   # custom_css = ['css/extra1.css', 'css/extra2.css']
