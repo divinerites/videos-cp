@@ -1,5 +1,6 @@
 # Site settings
-baseurl = "https://cp-videos.netlify.app/"
+# baseurl = "https://cp-videos.netlify.app/"
+baseurl = "https://elastic-mclean-778d36.netlify.app/"
 languageCode = "fr-fr"
 title = "CP Vidéos : catalogue de vidéos de Poker live"
 theme = ["hugrid-2020"]
