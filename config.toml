@@ -48,7 +48,7 @@ disableKinds = ["RSS"]
    dateFormatTime = "2 Jan 2006 15:04"
 
    # add extra-css
-   # custom_css = ['css/extra1.css', 'css/extra2.css']
+   custom_css = ['css/extra1.css']
 
    [params.plausible]
       enable = true

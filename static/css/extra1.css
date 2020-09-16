@@ -1,0 +1,11 @@
+.og-grid li {
+   margin-bottom: 30px;
+}
+
+.tags {
+   padding: 20px;
+   margin: 20px;
+   border: 1px solid #CCCCCC;
+   border-radius: 3px;
+   text-align: center;
+}

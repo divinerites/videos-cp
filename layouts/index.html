@@ -21,63 +21,58 @@
 		<div class="container">
 			{{ partial "header.html" . }}
 
-				<!-- Init le dict des circuits -->
-				{{ $circuits := dict }}
-				{{ $years := dict }}
+			<!-- Init le dict des circuits -->
+			{{ $circuits := dict }}
+			{{ $years := dict }}
 
-				{{ range $.Site.Data.items.items }}
-					{{ if .circuit }}
-						{{ $temp := dict .circuit 0 }}
-						{{ $circuits_new := merge $circuits $temp }}
-						{{ $circuits = $circuits_new }}
-					{{ end }}
-
-					{{ if .year }}
-						{{ $temp := dict .year 0 }}
-						{{ $years_new := merge $years $temp }}
-						{{ $years = $years_new }}
-					{{ end }}
+			{{ range $.Site.Data.items.items }}
+				{{ if .circuit }}
+					{{ $temp := dict .circuit 0 }}
+					{{ $circuits_new := merge $circuits $temp }}
+					{{ $circuits = $circuits_new }}
 				{{ end }}
 
-{{ $circuits }} + {{ $years }}
+				{{ if .year }}
+					{{ $temp := dict .year 0 }}
+					{{ $years_new := merge $years $temp }}
+					{{ $years = $years_new }}
+				{{ end }}
+			{{ end }}
 
-				<!-- +1 au nombre actuel de videos pour ce tag -->
-				{{ range $.Site.Data.items.items }}
-					{{ if .circuit }}
-						{{ $count := index $circuits .circuit }}
-						{{ $count := add $count 1 }}
-						{{ $temp := dict .circuit $count }}
-						{{ $circuits_new := merge $circuits $temp }}
-						{{ $circuits = $circuits_new }}
-					{{ end }}
-
-					{{ if .year }}
-						{{ $count := index $years .year }}
-						{{ $count := add $count 1 }}
-						{{ $temp := dict .year $count }}
-						{{ $years_new := merge $years $temp }}
-						{{ $years = $years_new }}
-					{{ end }}
+			<!-- +1 au nombre actuel de videos pour ce tag -->
+			{{ range $.Site.Data.items.items }}
+				{{ if .circuit }}
+					{{ $count := index $circuits .circuit }}
+					{{ $count := add $count 1 }}
+					{{ $temp := dict .circuit $count }}
+					{{ $circuits_new := merge $circuits $temp }}
+					{{ $circuits = $circuits_new }}
 				{{ end }}
 
-{{ $circuits }} + {{ $years }}
+				{{ if .year }}
+					{{ $count := index $years .year }}
+					{{ $count := add $count 1 }}
+					{{ $temp := dict .year $count }}
+					{{ $years_new := merge $years $temp }}
+					{{ $years = $years_new }}
+				{{ end }}
+			{{ end }}
 
-				<!-- Affiche les tags -->
-				<div>
-					<h2>Catégories de vidéos</h2>
-					{{ range $k, $i := $circuits }}
-						<button type="button" class="btn btn-primary">
-							{{ $k }} <span class="badge badge-light">{{ $i }}</span>
-						</button>
-					{{ end }}
+			<!-- Affiche les tags -->
+			<div class="tags">
+				<h2>Catégories de vidéos</h2>
+				{{ range $k, $i := $circuits }}
+					<button type="button" class="btn btn-primary">
+						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+					</button>
+				{{ end }}
 
-					{{ range $k, $i := $years }}
-						<button type="button" class="btn btn-info">
-							{{ $k }} <span class="badge badge-light">{{ $i }}</span>
-						</button>
-					{{ end }}
-
-				</div>
+				{{ range $k, $i := $years }}
+					<button type="button" class="btn btn-info">
+						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+					</button>
+				{{ end }}
+			</div>
 
 			<!-- Les videos -->
 			<div class="main">
