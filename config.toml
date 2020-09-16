@@ -20,7 +20,6 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
   [[module.imports]]
     path = "github.com/divinerites/plausible-hugo"
 
-
 [params]
    # Meta
    title = "CP Vidéos : catalogue de vidéos de Poker live"
@@ -45,3 +44,8 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 
    # add extra-css
    # custom_css = ['css/extra1.css', 'css/extra2.css']
+
+   [params.plausible]
+      enable = true
+      domain = "videos-cp"
+      # debug = true

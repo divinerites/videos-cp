@@ -2,7 +2,8 @@
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 	<head>
 	{{ partial "head.html" . }}
-	{{ template "_internal/google_analytics.html" . }}
+	<!-- Plausible Analytics - remplace Google Analytics -->
+	{{ partial "plausible_head.html" . }}
 	</head>
 	<body>
 		<div class="container">
