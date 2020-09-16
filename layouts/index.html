@@ -15,6 +15,11 @@
 		{{- end }}
 		<link href="{{ $css.RelPermalink }}" {{ if $isProd }}integrity="{{ $css.Data.Integrity }}"{{ end }} rel="stylesheet" type="text/css"/>
 
+		<script>
+			function download() {
+				plausible('download');
+			}
+		</script>
 	</head>
 
 	<body>
@@ -101,7 +106,13 @@
 				<ul id="og-grid" class="og-grid">
 					{{ range $.Site.Data.items.items }}
 					<li>
-						<a href="{{.url}}" data-largesrc="{{.image}}" data-title="{{.title}} / {{ .episode }}" data-description="{{.description }} ({{.year }})" data-buttontext="{{.buttontext}}">
+						<a href="{{.url}}"
+							onclick="download()"
+							data-largesrc="{{.image}}"
+							data-title="{{.title}} / {{ .episode }}"
+							data-description="{{.description }} ({{.year }})"
+							data-buttontext="{{.buttontext}}">
+
 							<img src="{{.thumb}}" alt="{{.alt}}"/>
 						</a>
 						<p><strong>{{ .title }}</strong><p>
