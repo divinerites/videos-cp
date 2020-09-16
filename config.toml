@@ -11,10 +11,13 @@ datadir     = "data"
 layoutdir   = "layouts"
 publishdir  = "public"
 
-disableKinds = ["RSS"]
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 
+# Unused
 [taxonomies]
-  type = "types"
+   circuit = "circuits"
+   title = "titles"
+   year = "years"
 
 [build]
   writeStats = false

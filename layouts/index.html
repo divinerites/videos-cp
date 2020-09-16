@@ -3,18 +3,16 @@
 
 	<head>
 		{{- $isProd := hugo.IsProduction -}}
-
 		{{ partial "head.html" . }}
+
 		<!-- Plausible Analytics - remplace Google Analytics -->
 		{{ partial "plausible_head.html" . }}
 
 		<!-- Bootstrap from hugo module -->
-		{{- $css := resources.Get "scss/bootstrap.scss" | resources.ExecuteAsTemplate "css/main.scss" . | toCSS }}
-		{{- if $isProd }}
-			{{- $css = $css | minify | fingerprint "sha384" }}
-		{{- end }}
-		<link href="{{ $css.RelPermalink }}" {{ if $isProd }}integrity="{{ $css.Data.Integrity }}"{{ end }} rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+		<!-- Custom Goal for Plausible -->
 		<script>
 			function download() {
 				plausible('download');
@@ -23,6 +21,22 @@
 	</head>
 
 	<body>
+
+		<!-- EXAMPLE -->
+<p>
+	<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+	  Link with href
+	</a>
+	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+	  Button with data-target
+	</button>
+ </p>
+ <div class="collapse" id="collapseExample">
+	<div class="card card-body">
+	  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+	</div>
+ </div>
+
 		<div class="container">
 			{{ partial "header.html" . }}
 
@@ -78,11 +92,65 @@
 				{{ end }}
 			{{ end }}
 
+
+
+
+
+
+<!-- TEST -->
+<p>
+{{ range $k, $i := $circuits }}
+	<!-- Bouton -->
+	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ $k }}" aria-expanded="false" aria-controls="{{ $k }}">
+		{{ $k }}
+	</button>
+{{ end }}
+</p>
+{{ range $k, $i := $circuits }}
+	<!-- Vidéos associées a ce bouton -->
+	<div class="collapse" id="{{ $k }}">
+		<div class="card card-body">
+			{{ $k }} {{ $k }} {{ $k }}
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+		</div>
+	</div>
+{{ end }}
+
+			{{ range $k, $i := $circuits }}
+			<!-- Show tabs for all circuits -->
+
+						<!-- Show videos for this specific circuit -->
+						<div class="main">
+							<h2>Circuit : {{ $k }}</h2>
+							<ul id="og-grid" class="og-grid">
+								{{ range where $.Site.Data.items.items "circuit" $k}}
+								<li>
+									<a href="{{.url}}"
+										onclick="download()"
+										data-largesrc="{{.image}}"
+										data-title="{{.title}} / {{ .episode }}"
+										data-description="{{.description }} ({{.year }})"
+										data-buttontext="{{.buttontext}}">
+
+										<img src="{{.thumb}}" alt="{{.alt}}"/>
+									</a>
+									<p><strong>{{ .title }}</strong><p>
+									</p><em>{{ .episode }}</em></p>
+								</li>
+								{{ end }}
+							</ul>
+						</div>
+						<!-- End Video -->
+
+			{{ end }}
+			<!-- FIN TEST -->
+
+
 			<!-- Affiche les tags -->
 			<div class="tags">
 				<h2>Catégories de vidéos</h2>
 				{{ range $k, $i := $circuits }}
-					<button type="button" class="btn btn-primary">
+					<button type="button" class="btn btn-success">
 						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
 					</button>
 				{{ end }}
