@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
 	<head>
 	{{ partial "head.html" . }}
 	<!-- Plausible Analytics - remplace Google Analytics -->
 	{{ partial "plausible_head.html" . }}
 	</head>
+
 	<body>
 		<div class="container">
-				{{ partial "header.html" . }}
+			{{ partial "header.html" . }}
+
+			<div>
+				<h2>TAGS</h2>
+				{{ range $.Site.Data.items.items }}
+				  <a href=""><h3>{{ .types }}</h3></a>
+				{{ end }}
+			</div>
+
 			<div class="main">
 				<ul id="og-grid" class="og-grid">
 					{{ range $.Site.Data.items.items }}

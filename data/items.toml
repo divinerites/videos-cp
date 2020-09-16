@@ -5,6 +5,8 @@ thumb = "images/thumbs/ppt.png"
 alt = "Hugrid Theme"
 description = "Partouche Poker Tour Saison 1 - Etape 1 Episode 1"
 url = "https://1fichier.com/?iyphire2tec32efpbuas"
+types = ["PPT"]
+
 [[items]]
 title = "PPT Saison 1 - Etape 1 - Ep 2"
 image = "images/full/ppt.png"
@@ -12,6 +14,8 @@ thumb = "images/thumbs/ppt.png"
 alt = "Hugrid Theme"
 description = "Partouche Poker Tour Saison 1 - Etape 1 Episode 2"
 url = "https://1fichier.com/?auqtoe84eooad32gcs24"
+types = ["PPT"]
+
 [[items]]
 title = "WPT - Saison 08 - Ep 3 - part 2"
 image = "images/full/wpt.png"
@@ -19,6 +23,8 @@ thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 description = "WPT - Saison 08 - Ep 3 - part 2"
 url = "https://1fichier.com/?g49ntev0u2is4kwlei8r"
+types = ["WPT"]
+
 [[items]]
 title = "WPT - Saison 08 - Ep 5 - part 1"
 image = "images/full/wpt.png"
@@ -26,6 +32,8 @@ thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 description = "WPT - Saison 08 - Ep 5 - part 1"
 url = "https://1fichier.com/?vbrwzw0tpzynyyzf9fuo"
+types = ["WPT"]
+
 [[items]]
 title = "WPT - Saison 08 - Ep 5 - part 2"
 image = "images/full/wpt.png"
@@ -33,6 +41,8 @@ thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 description = "WPT - Saison 08 - Ep 5 - part 2"
 url = "https://1fichier.com/?1aw94cv5ez53wxd31g0p"
+types = ["WPT"]
+
 [[items]]
 title = "WSOP 2009 - 07 - MAIN EVENT Episode 1"
 image = "images/full/wsop.png"
@@ -40,3 +50,4 @@ thumb = "images/thumbs/wsop.png"
 alt = "Hugrid Theme"
 description = "WSOP 2009 - 07 - MAIN EVENT Episode 1"
 url = "https://1fichier.com/?twcyn8n1q0gvas3eycgm"
+types = ["WSOP"]
