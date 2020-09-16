@@ -28,9 +28,9 @@ disableKinds = ["RSS"]
 [params]
    # Meta
    title = "CP Vidéos : catalogue de vidéos de Poker live"
-   subtitle = "Catalogue de vidéos de poker live préservée et présentée via Club Poker"
+   subtitle = "Catalogue de vidéos de poker live, préservées et présentées via Club Poker"
    author = "Divinerites"
-   description = "Catalogue de vidéos de poker live préservée et présentée via Club Poker"
+   description = "Catalogue de vidéos de poker live, préservées et présentées via Club Poker"
    keywords = "Hugo, Poker, Vidéos, ClubPoker, EPT, WSOP, WPT"
 
    # Body background color
