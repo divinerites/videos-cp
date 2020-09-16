@@ -1,0 +1,31 @@
+[build]
+publish = "public"
+command = "hugo --minify"
+functions = "functions"
+
+[context.production.environment]
+HUGO_VERSION = "0.74.3"
+HUGO_ENV = "production"
+RUBY_VERSION = "2.6.2"
+HUGO_ENABLEGITINFO = "true"
+TZ = "Europe/Zurich"
+# pour "postcss-cli": "^7.1.1"
+NODE_VERSION = "12.2.0"
+
+[context.deploy-preview]
+command = "hugo --buildFuture -b $DEPLOY_PRIME_URL"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.74.3"
+RUBY_VERSION = "2.6.2"
+HUGO_ENABLEGITINFO = "true"
+TZ = "Europe/Zurich"
+
+[context.branch-deploy]
+command = "hugo -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+HUGO_VERSION = "0.74.3"
+RUBY_VERSION = "2.6.2"
+HUGO_ENABLEGITINFO = "true"
+TZ = "Europe/Zurich"
