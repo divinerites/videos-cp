@@ -11,6 +11,16 @@ datadir     = "data"
 layoutdir   = "layouts"
 publishdir  = "public"
 
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+
+[build]
+  writeStats = false
+
+[module]
+  [[module.imports]]
+    path = "github.com/divinerites/plausible-hugo"
+
+
 [params]
    # Meta
    title = "CP Vidéos : catalogue de vidéos de Poker live"
