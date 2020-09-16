@@ -24,6 +24,7 @@
 			<!-- Init le dict des circuits -->
 			{{ $circuits := dict }}
 			{{ $years := dict }}
+			{{ $titles := dict }}
 
 			{{ range $.Site.Data.items.items }}
 				{{ if .circuit }}
@@ -36,6 +37,12 @@
 					{{ $temp := dict .year 0 }}
 					{{ $years_new := merge $years $temp }}
 					{{ $years = $years_new }}
+				{{ end }}
+
+				{{ if .title }}
+					{{ $temp := dict .title 0 }}
+					{{ $titles_new := merge $titles $temp }}
+					{{ $titles = $titles_new }}
 				{{ end }}
 			{{ end }}
 
@@ -56,6 +63,14 @@
 					{{ $years_new := merge $years $temp }}
 					{{ $years = $years_new }}
 				{{ end }}
+
+				{{ if .title }}
+					{{ $count := index $titles .title }}
+					{{ $count := add $count 1 }}
+					{{ $temp := dict .title $count }}
+					{{ $titles_new := merge $titles $temp }}
+					{{ $titles = $titles_new }}
+				{{ end }}
 			{{ end }}
 
 			<!-- Affiche les tags -->
@@ -72,6 +87,13 @@
 						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
 					</button>
 				{{ end }}
+
+				{{ range $k, $i := $titles }}
+					<button type="button" class="btn btn-warning">
+						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+					</button>
+				{{ end }}
+
 			</div>
 
 			<!-- Les videos -->
@@ -79,10 +101,11 @@
 				<ul id="og-grid" class="og-grid">
 					{{ range $.Site.Data.items.items }}
 					<li>
-						<a href="{{.url}}" data-largesrc="{{.image}}" data-title="{{.title}}" data-description="{{.description }}" data-buttontext="{{.buttontext}}">
+						<a href="{{.url}}" data-largesrc="{{.image}}" data-title="{{.title}} / {{ .episode }}" data-description="{{.description }} ({{.year }})" data-buttontext="{{.buttontext}}">
 							<img src="{{.thumb}}" alt="{{.alt}}"/>
 						</a>
-						<p>{{ .title | markdownify }}</p>
+						<p><strong>{{ .title }}</strong><p>
+						</p><em>{{ .episode }}</em></p>
 					</li>
 					{{ end }}
 				</ul>
