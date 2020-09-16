@@ -2,22 +2,84 @@
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 
 	<head>
-	{{ partial "head.html" . }}
-	<!-- Plausible Analytics - remplace Google Analytics -->
-	{{ partial "plausible_head.html" . }}
+		{{- $isProd := hugo.IsProduction -}}
+
+		{{ partial "head.html" . }}
+		<!-- Plausible Analytics - remplace Google Analytics -->
+		{{ partial "plausible_head.html" . }}
+
+		<!-- Bootstrap from hugo module -->
+		{{- $css := resources.Get "scss/bootstrap.scss" | resources.ExecuteAsTemplate "css/main.scss" . | toCSS }}
+		{{- if $isProd }}
+			{{- $css = $css | minify | fingerprint "sha384" }}
+		{{- end }}
+		<link href="{{ $css.RelPermalink }}" {{ if $isProd }}integrity="{{ $css.Data.Integrity }}"{{ end }} rel="stylesheet" type="text/css"/>
+
 	</head>
 
 	<body>
 		<div class="container">
 			{{ partial "header.html" . }}
 
-			<div>
-				<h2>TAGS</h2>
-				{{ range $.Site.Data.items.items }}
-				  <a href=""><h3>{{ .types }}</h3></a>
-				{{ end }}
-			</div>
+				<!-- Init le dict des circuits -->
+				{{ $circuits := dict }}
+				{{ $years := dict }}
 
+				{{ range $.Site.Data.items.items }}
+					{{ if .circuit }}
+						{{ $temp := dict .circuit 0 }}
+						{{ $circuits_new := merge $circuits $temp }}
+						{{ $circuits = $circuits_new }}
+					{{ end }}
+
+					{{ if .year }}
+						{{ $temp := dict .year 0 }}
+						{{ $years_new := merge $years $temp }}
+						{{ $years = $years_new }}
+					{{ end }}
+				{{ end }}
+
+{{ $circuits }} + {{ $years }}
+
+				<!-- +1 au nombre actuel de videos pour ce tag -->
+				{{ range $.Site.Data.items.items }}
+					{{ if .circuit }}
+						{{ $count := index $circuits .circuit }}
+						{{ $count := add $count 1 }}
+						{{ $temp := dict .circuit $count }}
+						{{ $circuits_new := merge $circuits $temp }}
+						{{ $circuits = $circuits_new }}
+					{{ end }}
+
+					{{ if .year }}
+						{{ $count := index $years .year }}
+						{{ $count := add $count 1 }}
+						{{ $temp := dict .year $count }}
+						{{ $years_new := merge $years $temp }}
+						{{ $years = $years_new }}
+					{{ end }}
+				{{ end }}
+
+{{ $circuits }} + {{ $years }}
+
+				<!-- Affiche les tags -->
+				<div>
+					<h2>Catégories de vidéos</h2>
+					{{ range $k, $i := $circuits }}
+						<button type="button" class="btn btn-primary">
+							{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+						</button>
+					{{ end }}
+
+					{{ range $k, $i := $years }}
+						<button type="button" class="btn btn-info">
+							{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+						</button>
+					{{ end }}
+
+				</div>
+
+			<!-- Les videos -->
 			<div class="main">
 				<ul id="og-grid" class="og-grid">
 					{{ range $.Site.Data.items.items }}
