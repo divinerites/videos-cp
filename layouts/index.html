@@ -123,20 +123,20 @@
 					<ul id="og-grid" class="og-grid">
 						{{ range where $.Site.Data.items.items "circuit" $k}}
 						<li>
-							<a href="{{.url}}"
-								onclick="download()"
-								data-largesrc="{{.image}}"
-								data-title="{{.title}} / {{ .episode }}"
-								data-description="{{.description }} ({{.year }})"
-								data-buttontext="{{.buttontext}}">
+								<a href="{{.url}}"
+									onclick="download()"
+									data-largesrc="{{.image}}"
+									data-title="{{.title}} / {{ .episode }}"
+									data-description="{{.description }} ({{.year }})"
+									data-buttontext="{{.buttontext}}">
 
-								<img src="{{.thumb}}" alt="{{.alt}}"/>
-							</a>
-							<p>
-								<strong>{{ .title }}</strong>
-								<br>
-								<em>{{ .episode }}</em>
-							</p>
+									<img src="{{.thumb}}" alt="{{.alt}}"/>
+								</a>
+								<p>
+									<strong>{{ .title }}</strong>
+									<br>
+									<em>{{ .episode }}</em>
+								</p>
 						</li>
 						{{ end }}
 					</ul>
