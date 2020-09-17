@@ -21,23 +21,8 @@
 	</head>
 
 	<body>
-
-		<!-- EXAMPLE -->
-<p>
-	<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-	  Link with href
-	</a>
-	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-	  Button with data-target
-	</button>
- </p>
- <div class="collapse" id="collapseExample">
-	<div class="card card-body">
-	  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-	</div>
- </div>
-
 		<div class="container">
+
 			{{ partial "header.html" . }}
 
 			<!-- Init le dict des circuits -->
@@ -92,58 +77,35 @@
 				{{ end }}
 			{{ end }}
 
-
-
-
-
-
-<!-- TEST -->
-<p>
-{{ range $k, $i := $circuits }}
-	<!-- Bouton -->
-	<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ $k }}" aria-expanded="false" aria-controls="{{ $k }}">
-		{{ $k }}
-	</button>
-{{ end }}
-</p>
-{{ range $k, $i := $circuits }}
-	<!-- Vidéos associées a ce bouton -->
-	<div class="collapse" id="{{ $k }}">
-		<div class="card card-body">
-			{{ $k }} {{ $k }} {{ $k }}
-			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-		</div>
-	</div>
-{{ end }}
-
-			{{ range $k, $i := $circuits }}
 			<!-- Show tabs for all circuits -->
+			{{ range $k, $i := $circuits }}
+				<!-- Show videos for this specific circuit -->
+				<div class="main">
+					<h2>Circuit : {{ $k }}</h2>
+					<ul id="og-grid" class="og-grid">
+						{{ range where $.Site.Data.items.items "circuit" $k}}
+						<li>
+							<a href="{{.url}}"
+								onclick="download()"
+								data-largesrc="{{.image}}"
+								data-title="{{.title}} / {{ .episode }}"
+								data-description="{{.description }} ({{.year }})"
+								data-buttontext="{{.buttontext}}">
 
-						<!-- Show videos for this specific circuit -->
-						<div class="main">
-							<h2>Circuit : {{ $k }}</h2>
-							<ul id="og-grid" class="og-grid">
-								{{ range where $.Site.Data.items.items "circuit" $k}}
-								<li>
-									<a href="{{.url}}"
-										onclick="download()"
-										data-largesrc="{{.image}}"
-										data-title="{{.title}} / {{ .episode }}"
-										data-description="{{.description }} ({{.year }})"
-										data-buttontext="{{.buttontext}}">
-
-										<img src="{{.thumb}}" alt="{{.alt}}"/>
-									</a>
-									<p><strong>{{ .title }}</strong><p>
-									</p><em>{{ .episode }}</em></p>
-								</li>
-								{{ end }}
-							</ul>
-						</div>
-						<!-- End Video -->
-
+								<img src="{{.thumb}}" alt="{{.alt}}"/>
+							</a>
+							<p>
+								<strong>{{ .title }}</strong>
+								<br>
+								<em>{{ .episode }}</em>
+							</p>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+				<!-- End Video -->
 			{{ end }}
-			<!-- FIN TEST -->
+			<!-- FIN boucle circuits -->
 
 
 			<!-- Affiche les tags -->
@@ -154,13 +116,13 @@
 						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
 					</button>
 				{{ end }}
-<br>
+				<br>
 				{{ range $k, $i := $years }}
 					<button type="button" class="btn btn-info">
 						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
 					</button>
 				{{ end }}
-<br>
+				<br>
 				{{ range $k, $i := $titles }}
 					<button type="button" class="btn btn-warning">
 						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
