@@ -34,6 +34,8 @@
 			{{ $circuits := dict }}
 			{{ $years := dict }}
 			{{ $titles := dict }}
+			{{ $venues := dict }}
+			{{ $cities := dict }}
 
 			{{ range $.Site.Data.items.items }}
 				{{ if .circuit }}
@@ -52,6 +54,18 @@
 					{{ $temp := dict .title 0 }}
 					{{ $titles_new := merge $titles $temp }}
 					{{ $titles = $titles_new }}
+				{{ end }}
+
+				{{ if .city }}
+					{{ $temp := dict .city 0 }}
+					{{ $cities_new := merge $cities $temp }}
+					{{ $cities = $cities_new }}
+				{{ end }}
+
+				{{ if .venue }}
+					{{ $temp := dict .venue 0 }}
+					{{ $venues_new := merge $venues $temp }}
+					{{ $venues = $venues_new }}
 				{{ end }}
 			{{ end }}
 
@@ -80,6 +94,23 @@
 					{{ $titles_new := merge $titles $temp }}
 					{{ $titles = $titles_new }}
 				{{ end }}
+
+				{{ if .city }}
+					{{ $count := index $cities .city }}
+					{{ $count := add $count 1 }}
+					{{ $temp := dict .city $count }}
+					{{ $cities_new := merge $cities $temp }}
+					{{ $cities = $cities_new }}
+				{{ end }}
+
+				{{ if .venue }}
+					{{ $count := index $venues .venue }}
+					{{ $count := add $count 1 }}
+					{{ $temp := dict .venue $count }}
+					{{ $venues_new := merge $venues $temp }}
+					{{ $venues = $venues_new }}
+				{{ end }}
+
 			{{ end }}
 
 			<!--
@@ -106,6 +137,18 @@
 						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
 					</a>
 				{{ end }}
+				<br>
+				{{ range $k, $i := $cities }}
+					<a href="#{{ $k }}" role="button" class="btn btn-danger">
+						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+					</a>
+				{{ end }}
+				<br>
+				{{ range $k, $i := $venues }}
+					<a href="#{{ $k }}" role="button" class="btn btn-secondary">
+						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+					</a>
+				{{ end }}
 			</div>
 
 			<!--
@@ -127,7 +170,7 @@
 									onclick="download()"
 									data-largesrc="{{.image}}"
 									data-title="{{.title}} / {{ .episode }}"
-									data-description="{{.description }} ({{.year }})"
+									data-description="{{ .description }} ({{ .year }}) {{ with .venue }}- {{ . }}{{ end }} {{ with .city }}- {{ . }}{{ end }}"
 									data-buttontext="{{.buttontext}}">
 
 									<img src="{{.thumb}}" alt="{{.alt}}"/>
@@ -160,12 +203,12 @@
 					<ul id="og-grid" class="og-grid">
 						{{ range where $.Site.Data.items.items "year" $k}}
 						<li>
-							<a href="{{.url}}"
+							<a href="{{ .url }}"
 								onclick="download()"
-								data-largesrc="{{.image}}"
-								data-title="{{.title}} / {{ .episode }}"
-								data-description="{{.description }} ({{.year }})"
-								data-buttontext="{{.buttontext}}">
+								data-largesrc="{{ .image}}"
+								data-title="{{ .title}} / {{ .episode }}"
+								data-description="{{ .description }} ({{ .year }}) {{ with .venue }}- {{ . }}{{ end }} {{ with .city }}- {{ . }}{{ end }}"
+								data-buttontext="{{ .buttontext }}">
 
 								<img src="{{.thumb}}" alt="{{.alt}}"/>
 							</a>
@@ -201,7 +244,81 @@
 								onclick="download()"
 								data-largesrc="{{.image}}"
 								data-title="{{.title}} / {{ .episode }}"
-								data-description="{{.description }} ({{.year }})"
+								data-description="{{ .description }} ({{ .year }}) {{ with .venue }}- {{ . }}{{ end }} {{ with .city }}- {{ . }}{{ end }}"
+								data-buttontext="{{.buttontext}}">
+
+								<img src="{{.thumb}}" alt="{{.alt}}"/>
+							</a>
+							<p>
+								<strong>{{ .title }}</strong>
+								<br>
+								<em>{{ .episode }}</em>
+							</p>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+				<!-- End Video -->
+			{{ end }}
+			<!-- FIN boucle circuits -->
+
+			<!--
+				CITIES
+				Show cities for all titles
+			-->
+			{{ range $k, $i := $cities }}
+				<!-- Show videos for this specific circuit -->
+				<a id="{{ $k }}"></a>
+				<div class="main">
+					<h2 class="zvideo alert alert-danger">
+						Ville : {{ $k }} <span class="badge badge-pill badge-light badge-danger">{{ $i }}</span>
+						<a href="#top" role="button" class="btn btn-danger btn-sm float-right">&#x2191;Retour aux choix de catégories</a>
+					</h2>
+					<ul id="og-grid" class="og-grid">
+						{{ range where $.Site.Data.items.items "city" $k}}
+						<li>
+							<a href="{{.url}}"
+								onclick="download()"
+								data-largesrc="{{.image}}"
+								data-title="{{.title}} / {{ .episode }}"
+								data-description="{{ .description }} ({{ .year }}) {{ with .venue }}- {{ . }}{{ end }} {{ with .city }}- {{ . }}{{ end }}"
+								data-buttontext="{{.buttontext}}">
+
+								<img src="{{.thumb}}" alt="{{.alt}}"/>
+							</a>
+							<p>
+								<strong>{{ .title }}</strong>
+								<br>
+								<em>{{ .episode }}</em>
+							</p>
+						</li>
+						{{ end }}
+					</ul>
+				</div>
+				<!-- End Video -->
+			{{ end }}
+			<!-- FIN boucle circuits -->
+
+			<!--
+				VENUES
+				Show venues for all titles
+			-->
+			{{ range $k, $i := $venues }}
+				<!-- Show videos for this specific circuit -->
+				<a id="{{ $k }}"></a>
+				<div class="main">
+					<h2 class="zvideo alert alert-secondary">
+						Casino : {{ $k }} <span class="badge badge-pill badge-light badge-secondary">{{ $i }}</span>
+						<a href="#top" role="button" class="btn btn-secondary btn-sm float-right">&#x2191;Retour aux choix de catégories</a>
+					</h2>
+					<ul id="og-grid" class="og-grid">
+						{{ range where $.Site.Data.items.items "venue" $k}}
+						<li>
+							<a href="{{.url}}"
+								onclick="download()"
+								data-largesrc="{{.image}}"
+								data-title="{{.title}} / {{ .episode }}"
+								data-description="{{ .description }} ({{ .year }}) {{ with .venue }}- {{ . }}{{ end }} {{ with .city }}- {{ . }}{{ end }}"
 								data-buttontext="{{.buttontext}}">
 
 								<img src="{{.thumb}}" alt="{{.alt}}"/>
