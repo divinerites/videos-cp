@@ -120,30 +120,31 @@
 
 			<div class="tags">
 				<h2>Catégories de vidéos</h2>
+
 				{{ range $k, $i := $circuits }}
 					<a href="#{{ $k }}" role="button" class="btn btn-sm btn-success">
 						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
 					</a>
 				{{ end }}
-				<br>
+
 				{{ range $k, $i := $years }}
-					<a href="#{{ $k }}" role="button" class="btn btn-sm btn-info">
-						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
-					</a>
+						<a href="#{{ $k }}" role="button" class="btn btn-sm btn-info">
+							{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+						</a>
 				{{ end }}
-				<br>
+
 				{{ range $k, $i := $titles }}
 					<a href="#{{ $k }}" role="button" class="btn btn-sm btn-warning">
 						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
 					</a>
 				{{ end }}
-				<br>
+
 				{{ range $k, $i := $cities }}
 					<a href="#{{ $k }}" role="button" class="btn btn-sm btn-danger">
 						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
 					</a>
 				{{ end }}
-				<br>
+
 				{{ range $k, $i := $venues }}
 					<a href="#{{ $k }}" role="button" class="btn btn-sm btn-secondary">
 						{{ $k }} <span class="badge badge-light">{{ $i }}</span>
