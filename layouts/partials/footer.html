@@ -1,5 +1,6 @@
 <footer>
-   {{- $_fdate := site.Params.dateFormatTime }}
+	{{- $_fdate := site.Params.dateFormatTime }}
+	<hr>
 	{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}
 	<a href="https://www.gohugo.io" title="link">gohugo.io</a> v{{ hugo.Version }} ({{ dateFormat $_fdate now }})
 </footer>

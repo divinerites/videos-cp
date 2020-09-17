@@ -43,7 +43,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
    buttontext = "Charger la vidéo"
 
    # Footer text
-   footertext = "Made with"
+   footertext = "Videos provided by Holalahola - Web site made by Divinerites with"
 
    # Dates
    dateFormat = "2 Jan 2006"
