@@ -7,6 +7,12 @@
 
 		<!-- Plausible Analytics - remplace Google Analytics -->
 		{{ partial "plausible_head.html" . }}
+		<script>
+			// Custom Goal for Plausible
+			function download() {
+				plausible('download');
+			};
+		</script>
 
 		<!-- Bootstrap from hugo module -->
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -15,12 +21,6 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-		<script>
-			// Custom Goal for Plausible
-			function download() {
-				plausible('download');
-			};
-		</script>
 	</head>
 
 	<body>
@@ -29,13 +29,16 @@
 			{{ partial "header.html" . }}
 
 			<!--
-				Init le dict des circuits
+				Init le dict des divers axes
 			-->
 			{{ $circuits := dict }}
-			{{ $years := dict }}
-			{{ $titles := dict }}
-			{{ $venues := dict }}
-			{{ $cities := dict }}
+			{{ $years    := dict }}
+			{{ $titles   := dict }}
+			{{ $venues   := dict }}
+			{{ $cities   := dict }}
+
+
+
 
 			{{ range $.Site.Data.items.items }}
 				{{ if .circuit }}
@@ -117,11 +120,11 @@
 			<div class="tags">
 				<h2>Catégories de vidéos</h2>
 				<!-- Affiche les tags -->
-				{{- partial "button-category" (dict "type" $circuits "style" "success") }}
-				{{- partial "button-category" (dict "type" $years 	  "style" "info") }}
-				{{- partial "button-category" (dict "type" $titles   "style" "warning") }}
-				{{- partial "button-category" (dict "type" $cities   "style" "danger") }}
-				{{- partial "button-category" (dict "type" $venues   "style" "secondary") }}
+				{{- partial "button-category" (dict "types" $circuits "style" "success") }}
+				{{- partial "button-category" (dict "types" $years 	  "style" "info") }}
+				{{- partial "button-category" (dict "types" $titles   "style" "warning") }}
+				{{- partial "button-category" (dict "types" $cities   "style" "danger") }}
+				{{- partial "button-category" (dict "types" $venues   "style" "secondary") }}
 			</div>
 
 			<!-- Show all zones -->
@@ -146,11 +149,11 @@
 
 <!--
 	Affiche les boutons des catégories
-	Paramètre : (dict "type" $circuits "style" "success")
+	Paramètre : (dict "types" $circuits "style" "success")
 -->
 {{- define "partials/button-category" }}
 	{{- $style := .style }}
-	{{- range $k, $i := .type }}
+	{{- range $k, $i := .types }}
 		<a href="#{{ $k }}" role="button" class="btn btn-sm btn-{{ $style }}">
 			{{ $k }} <span class="badge badge-light">{{ $i }}</span>
 		</a>
@@ -171,7 +174,7 @@
 		<a id="{{ $k }}"></a>
 		<div class="main">
 			<h2 class="zvideo alert alert-{{ $style }}">
-				Circuit : {{ $k }} <span class="badge badge-pill badge-light badge-{{ $style }}">{{ $i }}</span>
+				{{ $type | humanize }} : {{ $k }} <span class="badge badge-pill badge-light badge-{{ $style }}">{{ $i }}</span>
 				<a href="#top" role="button" class="btn btn-{{ $style }} btn-sm float-right">&#x2191;Retour aux choix de catégories</a>
 			</h2>
 			<ul id="og-grid" class="og-grid">
