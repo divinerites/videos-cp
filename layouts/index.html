@@ -29,7 +29,7 @@
 			{{ partial "header.html" . }}
 
 			<!--
-				Init le dict des divers axes
+				Init le dict des divers axes désirés
 			-->
 			{{ $circuits := dict }}
 			{{ $years    := dict }}
@@ -37,40 +37,14 @@
 			{{ $venues   := dict }}
 			{{ $cities   := dict }}
 
-
-
-
-			{{ range $.Site.Data.items.items }}
-				{{ if .circuit }}
-					{{ $temp := dict .circuit 0 }}
-					{{ $circuits_new := merge $circuits $temp }}
-					{{ $circuits = $circuits_new }}
-				{{ end }}
-
-				{{ if .year }}
-					{{ $temp := dict .year 0 }}
-					{{ $years_new := merge $years $temp }}
-					{{ $years = $years_new }}
-				{{ end }}
-
-				{{ if .title }}
-					{{ $temp := dict .title 0 }}
-					{{ $titles_new := merge $titles $temp }}
-					{{ $titles = $titles_new }}
-				{{ end }}
-
-				{{ if .city }}
-					{{ $temp := dict .city 0 }}
-					{{ $cities_new := merge $cities $temp }}
-					{{ $cities = $cities_new }}
-				{{ end }}
-
-				{{ if .venue }}
-					{{ $temp := dict .venue 0 }}
-					{{ $venues_new := merge $venues $temp }}
-					{{ $venues = $venues_new }}
-				{{ end }}
-			{{ end }}
+			<!-- Maj des dict "types" par axe -->
+			{{- range $.Site.Data.items.items }}
+				{{- $circuits = partial "create-axe-dict" (dict "type" .circuit "types" $circuits) }}
+				{{- $years = partial "create-axe-dict" (dict "type" .year "types" $years) }}
+				{{- $titles = partial "create-axe-dict" (dict "type" .title "types" $titles) }}
+				{{- $cities = partial "create-axe-dict" (dict "type" .city "types" $cities) }}
+				{{- $venues = partial "create-axe-dict" (dict "type" .venue "types" $venues) }}
+			{{- end  }}
 
 			<!-- +1 au nombre actuel de videos pour ce tag -->
 			{{ range $.Site.Data.items.items }}
@@ -201,4 +175,17 @@
 		<!-- End Video -->
 	{{ end }}
 {{- end }}
-<!-- End partial -->
+
+<!--
+	Maj des dict "types" par axe
+	(dict "type" .circuit "types" $circuits)
+-->
+{{- define "partials/create-axe-dict" }}
+	{{ $types := .types }}
+	{{ if .type }}
+		{{ $temp := dict .type 0 }}
+		{{ $temp_new := merge $types $temp }}
+		{{ $types = $temp_new }}
+	{{ end }}
+	{{ return $types }}
+{{- end }}
