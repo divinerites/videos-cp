@@ -37,9 +37,10 @@
 
 			<!-- AFFICHAGE -->
 			<a id="top"></a>
+
+			<!-- Affiche les tags -->
 			<div class="tags">
 				<h2>Catégories de vidéos</h2>
-				<!-- Affiche les tags -->
 				{{- partial "button-category" (dict "types" $circuits "style" "success") }}
 				{{- partial "button-category" (dict "types" $years    "style" "info") }}
 				{{- partial "button-category" (dict "types" $titles   "style" "warning") }}
@@ -54,6 +55,7 @@
 			{{- partial "video-unit" (dict "context" $ "type" "city"    "types" $cities   "style" "danger") }}
 			{{- partial "video-unit" (dict "context" $ "type" "venue"   "types" $venues   "style" "secondary") }}
 
+			<!-- Footer -->
 			{{- partial "footer.html" . }}
 		</div>
 		{{- partial "scripts.html" . }}
