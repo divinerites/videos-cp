@@ -30,7 +30,7 @@
 			<!-- Initialise les divers dictionnaires des axes -->
 			{{ $dict_tags := partial "axes-dict" . }}
 			{{- $circuits 	:= index $dict_tags "circuits" }}
-			{{- $years 		:= index $dict_tags "years" }}
+			{{- $dates 		:= index $dict_tags "dates" }}
 			{{- $titles 	:= index $dict_tags "titles" }}
 			{{- $cities 	:= index $dict_tags "cities" }}
 			{{- $venues 	:= index $dict_tags "venues" }}
@@ -42,7 +42,7 @@
 			<div class="tags">
 				<h2>Catégories de vidéos</h2>
 				{{- partial "button-category" (dict "types" $circuits "style" "success") }}
-				{{- partial "button-category" (dict "types" $years    "style" "info") }}
+				{{- partial "button-category" (dict "types" $dates    "style" "info") }}
 				{{- partial "button-category" (dict "types" $titles   "style" "warning") }}
 				{{- partial "button-category" (dict "types" $cities   "style" "danger") }}
 				{{- partial "button-category" (dict "types" $venues   "style" "secondary") }}
@@ -50,7 +50,7 @@
 
 			<!-- Show all zones -->
 			{{- partial "video-unit" (dict "context" $ "type" "circuit" "types" $circuits "style" "success") }}
-			{{- partial "video-unit" (dict "context" $ "type" "year"    "types" $years    "style" "info") }}
+			{{- partial "video-unit" (dict "context" $ "type" "date"    "types" $dates    "style" "info") }}
 			{{- partial "video-unit" (dict "context" $ "type" "title"   "types" $titles   "style" "warning") }}
 			{{- partial "video-unit" (dict "context" $ "type" "city"    "types" $cities   "style" "danger") }}
 			{{- partial "video-unit" (dict "context" $ "type" "venue"   "types" $venues   "style" "secondary") }}
@@ -106,7 +106,7 @@
 {{- define "partials/axes-dict" }}
 	<!-- Init le dict des divers axes désirés -->
 	{{- $circuits := dict }}
-	{{- $years    := dict }}
+	{{- $dates    := dict }}
 	{{- $titles   := dict }}
 	{{- $venues   := dict }}
 	{{- $cities   := dict }}
@@ -114,7 +114,7 @@
 	<!-- Maj des dict "types" par axe [sans totaux] -->
 	{{- range $.Site.Data.items.items }}
 		{{- $circuits = partial "create-axe-dict" (dict "type" .circuit "types" $circuits) }}
-		{{- $years    = partial "create-axe-dict" (dict "type" .year    "types" $years) }}
+		{{- $dates    = partial "create-axe-dict" (dict "type" .date    "types" $dates) }}
 		{{- $titles   = partial "create-axe-dict" (dict "type" .title   "types" $titles) }}
 		{{- $cities   = partial "create-axe-dict" (dict "type" .city    "types" $cities) }}
 		{{- $venues   = partial "create-axe-dict" (dict "type" .venue   "types" $venues) }}
@@ -123,13 +123,13 @@
 	<!-- +1 au nombre actuel de videos pour ce tag -->
 	{{- range $.Site.Data.items.items }}
 		{{- $circuits = partial "counter-axe-dict" (dict "type" .circuit "types" $circuits) }}
-		{{- $years    = partial "counter-axe-dict" (dict "type" .year    "types" $years) }}
+		{{- $dates    = partial "counter-axe-dict" (dict "type" .date    "types" $dates) }}
 		{{- $titles   = partial "counter-axe-dict" (dict "type" .title   "types" $titles) }}
 		{{- $cities   = partial "counter-axe-dict" (dict "type" .city    "types" $cities) }}
 		{{- $venues   = partial "counter-axe-dict" (dict "type" .venue   "types" $venues) }}
 	{{- end }}
 
-	{{- $axes_dict := (dict "circuits" $circuits "years" $years "titles" $titles "cities" $cities "venues" $venues )}}
+	{{- $axes_dict := (dict "circuits" $circuits "dates" $dates "titles" $titles "cities" $cities "venues" $venues )}}
 	{{ return $axes_dict }}
 {{- end }}
 
@@ -170,7 +170,7 @@
 							onclick="download()"
 							data-largesrc="{{.image}}"
 							data-title="{{.title}} / {{ .episode }}"
-							data-description="{{ .description }} ({{ .year }}) {{ with .venue }}- {{ . }}{{ end }} {{ with .city }}- {{ . }}{{ end }}"
+							data-description="{{ .description }} ({{ .date }}) {{ with .venue }}- {{ . }}{{ end }} {{ with .city }}- {{ . }}{{ end }}"
 							data-buttontext="{{.buttontext}}">
 
 							<img src="{{.thumb}}" alt="{{.alt}}"/>
