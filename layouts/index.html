@@ -172,7 +172,6 @@
 				{{- range where $.context.Site.Data.items.items $type $k}}
 				<li>
 						<a href="{{.url}}"
-							onclick="download()"
 							data-largesrc="{{.image}}"
 							data-title="{{.saison}} / {{ .episode }}"
 							data-description="{{ .description }} ({{ .date }}) {{ with .casino }}- {{ . }}{{ end }} {{ with .ville }}- {{ . }}{{ end }}"
