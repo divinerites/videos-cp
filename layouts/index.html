@@ -20,7 +20,6 @@
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
 	</head>
 
 	<body>
@@ -28,74 +27,21 @@
 
 			{{ partial "header.html" . }}
 
-			<!--
-				Init le dict des divers axes désirés
-			-->
-			{{ $circuits := dict }}
-			{{ $years    := dict }}
-			{{ $titles   := dict }}
-			{{ $venues   := dict }}
-			{{ $cities   := dict }}
+			<!-- Initialise les divers dictionnaires des axes -->
+			{{ $dict_tags := partial "axes-dict" . }}
+			{{- $circuits 	:= index $dict_tags "circuits" }}
+			{{- $years 		:= index $dict_tags "years" }}
+			{{- $titles 	:= index $dict_tags "titles" }}
+			{{- $cities 	:= index $dict_tags "cities" }}
+			{{- $venues 	:= index $dict_tags "venues" }}
 
-			<!-- Maj des dict "types" par axe -->
-			{{- range $.Site.Data.items.items }}
-				{{- $circuits = partial "create-axe-dict" (dict "type" .circuit "types" $circuits) }}
-				{{- $years = partial "create-axe-dict" (dict "type" .year "types" $years) }}
-				{{- $titles = partial "create-axe-dict" (dict "type" .title "types" $titles) }}
-				{{- $cities = partial "create-axe-dict" (dict "type" .city "types" $cities) }}
-				{{- $venues = partial "create-axe-dict" (dict "type" .venue "types" $venues) }}
-			{{- end  }}
-
-			<!-- +1 au nombre actuel de videos pour ce tag -->
-			{{ range $.Site.Data.items.items }}
-				{{ if .circuit }}
-					{{ $count := index $circuits .circuit }}
-					{{ $count := add $count 1 }}
-					{{ $temp := dict .circuit $count }}
-					{{ $circuits_new := merge $circuits $temp }}
-					{{ $circuits = $circuits_new }}
-				{{ end }}
-
-				{{ if .year }}
-					{{ $count := index $years .year }}
-					{{ $count := add $count 1 }}
-					{{ $temp := dict .year $count }}
-					{{ $years_new := merge $years $temp }}
-					{{ $years = $years_new }}
-				{{ end }}
-
-				{{ if .title }}
-					{{ $count := index $titles .title }}
-					{{ $count := add $count 1 }}
-					{{ $temp := dict .title $count }}
-					{{ $titles_new := merge $titles $temp }}
-					{{ $titles = $titles_new }}
-				{{ end }}
-
-				{{ if .city }}
-					{{ $count := index $cities .city }}
-					{{ $count := add $count 1 }}
-					{{ $temp := dict .city $count }}
-					{{ $cities_new := merge $cities $temp }}
-					{{ $cities = $cities_new }}
-				{{ end }}
-
-				{{ if .venue }}
-					{{ $count := index $venues .venue }}
-					{{ $count := add $count 1 }}
-					{{ $temp := dict .venue $count }}
-					{{ $venues_new := merge $venues $temp }}
-					{{ $venues = $venues_new }}
-				{{ end }}
-
-			{{ end }}
-
+			<!-- AFFICHAGE -->
 			<a id="top"></a>
 			<div class="tags">
 				<h2>Catégories de vidéos</h2>
 				<!-- Affiche les tags -->
 				{{- partial "button-category" (dict "types" $circuits "style" "success") }}
-				{{- partial "button-category" (dict "types" $years 	  "style" "info") }}
+				{{- partial "button-category" (dict "types" $years    "style" "info") }}
 				{{- partial "button-category" (dict "types" $titles   "style" "warning") }}
 				{{- partial "button-category" (dict "types" $cities   "style" "danger") }}
 				{{- partial "button-category" (dict "types" $venues   "style" "secondary") }}
@@ -108,18 +54,82 @@
 			{{- partial "video-unit" (dict "context" $ "type" "city"    "types" $cities   "style" "danger") }}
 			{{- partial "video-unit" (dict "context" $ "type" "venue"   "types" $venues   "style" "secondary") }}
 
-			{{ partial "footer.html" . }}
-
+			{{- partial "footer.html" . }}
 		</div>
-		{{ partial "scripts.html" . }}
+		{{- partial "scripts.html" . }}
 	</body>
 </html>
 
+
 <!--
-
+	#########################################
 	####  Factorise via Inline Partials  ####
-
+	#########################################
 -->
+
+<!--
+	Maj des dict "types" par axe
+	(dict "type" .circuit "types" $circuits)
+-->
+{{- define "partials/create-axe-dict" }}
+	{{- $types := .types }}
+	{{- if .type }}
+		{{ $temp := dict .type 0 }}
+		{{ $temp_new := merge $types $temp }}
+		{{ $types = $temp_new }}
+	{{- end }}
+	{{ return $types }}
+{{- end }}
+
+<!--
+	+1 au nombre actuel de videos pour ce tag
+	(dict "type" .circuit "types" $circuits)
+-->
+{{- define "partials/counter-axe-dict" }}
+	{{- $types := .types }}
+	{{- if .type }}
+		{{- $count := index $types .type }}
+		{{- $count := add $count 1 }}
+		{{- $temp := dict .type $count }}
+		{{- $temp_new := merge $types $temp }}
+		{{- $types = $temp_new }}
+	{{- end }}
+	{{ return $types }}
+{{- end }}
+
+<!--
+	Initialise les divers dictionnaires des axes
+	Return dict des divers axes
+-->
+{{- define "partials/axes-dict" }}
+	<!-- Init le dict des divers axes désirés -->
+	{{- $circuits := dict }}
+	{{- $years    := dict }}
+	{{- $titles   := dict }}
+	{{- $venues   := dict }}
+	{{- $cities   := dict }}
+
+	<!-- Maj des dict "types" par axe [sans totaux] -->
+	{{- range $.Site.Data.items.items }}
+		{{- $circuits = partial "create-axe-dict" (dict "type" .circuit "types" $circuits) }}
+		{{- $years    = partial "create-axe-dict" (dict "type" .year    "types" $years) }}
+		{{- $titles   = partial "create-axe-dict" (dict "type" .title   "types" $titles) }}
+		{{- $cities   = partial "create-axe-dict" (dict "type" .city    "types" $cities) }}
+		{{- $venues   = partial "create-axe-dict" (dict "type" .venue   "types" $venues) }}
+	{{- end  }}
+
+	<!-- +1 au nombre actuel de videos pour ce tag -->
+	{{- range $.Site.Data.items.items }}
+		{{- $circuits = partial "counter-axe-dict" (dict "type" .circuit "types" $circuits) }}
+		{{- $years    = partial "counter-axe-dict" (dict "type" .year    "types" $years) }}
+		{{- $titles   = partial "counter-axe-dict" (dict "type" .title   "types" $titles) }}
+		{{- $cities   = partial "counter-axe-dict" (dict "type" .city    "types" $cities) }}
+		{{- $venues   = partial "counter-axe-dict" (dict "type" .venue   "types" $venues) }}
+	{{- end }}
+
+	{{- $axes_dict := (dict "circuits" $circuits "years" $years "titles" $titles "cities" $cities "venues" $venues )}}
+	{{ return $axes_dict }}
+{{- end }}
 
 <!--
 	Affiche les boutons des catégories
@@ -143,7 +153,7 @@
 	{{- $types := .types }}
 	{{- $style := .style }}
 
-	{{ range $k, $i := $types }}
+	{{- range $k, $i := $types }}
 		<!-- Show videos for this specific circuit -->
 		<a id="{{ $k }}"></a>
 		<div class="main">
@@ -152,7 +162,7 @@
 				<a href="#top" role="button" class="btn btn-{{ $style }} btn-sm float-right">&#x2191;Retour aux choix de catégories</a>
 			</h2>
 			<ul id="og-grid" class="og-grid">
-				{{ range where $.context.Site.Data.items.items $type $k}}
+				{{- range where $.context.Site.Data.items.items $type $k}}
 				<li>
 						<a href="{{.url}}"
 							onclick="download()"
@@ -169,23 +179,9 @@
 							<em>{{ .episode }}</em>
 						</p>
 				</li>
-				{{ end }}
+				{{- end }}
 			</ul>
 		</div>
 		<!-- End Video -->
-	{{ end }}
-{{- end }}
-
-<!--
-	Maj des dict "types" par axe
-	(dict "type" .circuit "types" $circuits)
--->
-{{- define "partials/create-axe-dict" }}
-	{{ $types := .types }}
-	{{ if .type }}
-		{{ $temp := dict .type 0 }}
-		{{ $temp_new := merge $types $temp }}
-		{{ $types = $temp_new }}
-	{{ end }}
-	{{ return $types }}
+	{{- end }}
 {{- end }}
