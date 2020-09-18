@@ -33,7 +33,7 @@
 			{{- $dates 		:= index $dict_tags "dates" }}
 			{{- $titles 	:= index $dict_tags "titles" }}
 			{{- $villes 	:= index $dict_tags "villes" }}
-			{{- $venues 	:= index $dict_tags "venues" }}
+			{{- $casinos 	:= index $dict_tags "casinos" }}
 
 			<!-- AFFICHAGE -->
 			<a id="top"></a>
@@ -45,7 +45,7 @@
 				{{- partial "button-category" (dict "types" $dates    "style" "info") }}
 				{{- partial "button-category" (dict "types" $titles   "style" "warning") }}
 				{{- partial "button-category" (dict "types" $villes   "style" "danger") }}
-				{{- partial "button-category" (dict "types" $venues   "style" "secondary") }}
+				{{- partial "button-category" (dict "types" $casinos   "style" "secondary") }}
 			</div>
 
 			<!-- Show all zones -->
@@ -53,7 +53,7 @@
 			{{- partial "video-unit" (dict "context" $ "type" "date"    "types" $dates    "style" "info") }}
 			{{- partial "video-unit" (dict "context" $ "type" "title"   "types" $titles   "style" "warning") }}
 			{{- partial "video-unit" (dict "context" $ "type" "ville"    "types" $villes   "style" "danger") }}
-			{{- partial "video-unit" (dict "context" $ "type" "venue"   "types" $venues   "style" "secondary") }}
+			{{- partial "video-unit" (dict "context" $ "type" "casino"   "types" $casinos   "style" "secondary") }}
 
 			<!-- Footer -->
 			{{- partial "footer.html" . }}
@@ -108,7 +108,7 @@
 	{{- $circuits := dict }}
 	{{- $dates    := dict }}
 	{{- $titles   := dict }}
-	{{- $venues   := dict }}
+	{{- $casinos   := dict }}
 	{{- $villes   := dict }}
 
 	<!-- Maj des dict "types" par axe [sans totaux] -->
@@ -117,7 +117,7 @@
 		{{- $dates    = partial "create-axe-dict" (dict "type" .date    "types" $dates) }}
 		{{- $titles   = partial "create-axe-dict" (dict "type" .title   "types" $titles) }}
 		{{- $villes   = partial "create-axe-dict" (dict "type" .ville    "types" $villes) }}
-		{{- $venues   = partial "create-axe-dict" (dict "type" .venue   "types" $venues) }}
+		{{- $casinos   = partial "create-axe-dict" (dict "type" .casino   "types" $casinos) }}
 	{{- end  }}
 
 	<!-- +1 au nombre actuel de videos pour ce tag -->
@@ -126,10 +126,10 @@
 		{{- $dates    = partial "counter-axe-dict" (dict "type" .date    "types" $dates) }}
 		{{- $titles   = partial "counter-axe-dict" (dict "type" .title   "types" $titles) }}
 		{{- $villes   = partial "counter-axe-dict" (dict "type" .ville    "types" $villes) }}
-		{{- $venues   = partial "counter-axe-dict" (dict "type" .venue   "types" $venues) }}
+		{{- $casinos   = partial "counter-axe-dict" (dict "type" .casino   "types" $casinos) }}
 	{{- end }}
 
-	{{- $axes_dict := (dict "circuits" $circuits "dates" $dates "titles" $titles "villes" $villes "venues" $venues )}}
+	{{- $axes_dict := (dict "circuits" $circuits "dates" $dates "titles" $titles "villes" $villes "casinos" $casinos )}}
 	{{ return $axes_dict }}
 {{- end }}
 
@@ -170,7 +170,7 @@
 							onclick="download()"
 							data-largesrc="{{.image}}"
 							data-title="{{.title}} / {{ .episode }}"
-							data-description="{{ .description }} ({{ .date }}) {{ with .venue }}- {{ . }}{{ end }} {{ with .ville }}- {{ . }}{{ end }}"
+							data-description="{{ .description }} ({{ .date }}) {{ with .casino }}- {{ . }}{{ end }} {{ with .ville }}- {{ . }}{{ end }}"
 							data-buttontext="{{.buttontext}}">
 
 							<img src="{{.thumb}}" alt="{{.alt}}"/>
