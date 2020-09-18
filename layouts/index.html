@@ -145,7 +145,7 @@
 {{- define "partials/button-category" }}
 	{{- $style := .style }}
 	{{- range $k, $i := .types }}
-		<a href="#{{ $k }}" role="button" class="btn btn-sm btn-{{ $style }}">
+		<a href="#{{ $k }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }}">
 			{{ $k }} <span class="badge badge-light">{{ $i }}</span>
 		</a>
 	{{- end }}
