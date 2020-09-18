@@ -43,17 +43,17 @@
 				<h2>Catégories de vidéos</h2>
 				{{- partial "button-category" (dict "types" $circuits "style" "success") }}
 				{{- partial "button-category" (dict "types" $dates    "style" "info") }}
-				{{- partial "button-category" (dict "types" $saisons   "style" "warning") }}
+				{{- partial "button-category" (dict "types" $saisons  "style" "warning") }}
 				{{- partial "button-category" (dict "types" $villes   "style" "danger") }}
-				{{- partial "button-category" (dict "types" $casinos   "style" "secondary") }}
+				{{- partial "button-category" (dict "types" $casinos  "style" "secondary") }}
 			</div>
 
 			<!-- Show all zones -->
 			{{- partial "video-unit" (dict "context" $ "type" "circuit" "types" $circuits "style" "success") }}
 			{{- partial "video-unit" (dict "context" $ "type" "date"    "types" $dates    "style" "info") }}
-			{{- partial "video-unit" (dict "context" $ "type" "saison"   "types" $saisons   "style" "warning") }}
-			{{- partial "video-unit" (dict "context" $ "type" "ville"    "types" $villes   "style" "danger") }}
-			{{- partial "video-unit" (dict "context" $ "type" "casino"   "types" $casinos   "style" "secondary") }}
+			{{- partial "video-unit" (dict "context" $ "type" "saison"  "types" $saisons  "style" "warning") }}
+			{{- partial "video-unit" (dict "context" $ "type" "ville"   "types" $villes   "style" "danger") }}
+			{{- partial "video-unit" (dict "context" $ "type" "casino"  "types" $casinos  "style" "secondary") }}
 
 			<!-- Footer -->
 			{{- partial "footer.html" . }}
@@ -92,7 +92,7 @@
 	{{- if .type }}
 		{{- $count := index $types .type }}
 		{{- $count := add $count 1 }}
-		{{- $temp := dict .type $count }}
+		{{- $temp  := dict .type $count }}
 		{{- $temp_new := merge $types $temp }}
 		{{- $types = $temp_new }}
 	{{- end }}
@@ -107,26 +107,26 @@
 	<!-- Init le dict des divers axes désirés -->
 	{{- $circuits := dict }}
 	{{- $dates    := dict }}
-	{{- $saisons   := dict }}
-	{{- $casinos   := dict }}
+	{{- $saisons  := dict }}
+	{{- $casinos  := dict }}
 	{{- $villes   := dict }}
 
 	<!-- Maj des dict "types" par axe [sans totaux] -->
 	{{- range $.Site.Data.items.items }}
 		{{- $circuits = partial "create-axe-dict" (dict "type" .circuit "types" $circuits) }}
 		{{- $dates    = partial "create-axe-dict" (dict "type" .date    "types" $dates) }}
-		{{- $saisons   = partial "create-axe-dict" (dict "type" .saison   "types" $saisons) }}
-		{{- $villes   = partial "create-axe-dict" (dict "type" .ville    "types" $villes) }}
-		{{- $casinos   = partial "create-axe-dict" (dict "type" .casino   "types" $casinos) }}
+		{{- $saisons  = partial "create-axe-dict" (dict "type" .saison  "types" $saisons) }}
+		{{- $villes   = partial "create-axe-dict" (dict "type" .ville   "types" $villes) }}
+		{{- $casinos  = partial "create-axe-dict" (dict "type" .casino  "types" $casinos) }}
 	{{- end  }}
 
 	<!-- +1 au nombre actuel de videos pour ce tag -->
 	{{- range $.Site.Data.items.items }}
 		{{- $circuits = partial "counter-axe-dict" (dict "type" .circuit "types" $circuits) }}
 		{{- $dates    = partial "counter-axe-dict" (dict "type" .date    "types" $dates) }}
-		{{- $saisons   = partial "counter-axe-dict" (dict "type" .saison   "types" $saisons) }}
-		{{- $villes   = partial "counter-axe-dict" (dict "type" .ville    "types" $villes) }}
-		{{- $casinos   = partial "counter-axe-dict" (dict "type" .casino   "types" $casinos) }}
+		{{- $saisons  = partial "counter-axe-dict" (dict "type" .saison  "types" $saisons) }}
+		{{- $villes   = partial "counter-axe-dict" (dict "type" .ville   "types" $villes) }}
+		{{- $casinos  = partial "counter-axe-dict" (dict "type" .casino  "types" $casinos) }}
 	{{- end }}
 
 	{{- $axes_dict := (dict "circuits" $circuits "dates" $dates "saisons" $saisons "villes" $villes "casinos" $casinos )}}
