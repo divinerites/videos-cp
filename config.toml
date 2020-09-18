@@ -53,7 +53,7 @@ notAlternative = true
    buttontext = "Charger la vidéo"
 
    # Footer text
-   footertext = "Videos provided by Holalahola - Web site made by Divinerites with"
+   footertext = "Videos proposées par Holalahola - Web site par Divinerites"
 
    # Dates
    dateFormat = "2 Jan 2006"

@@ -1,0 +1,8 @@
+{{- $_fdate := site.Params.dateFormatTime }}
+{{- $count_videos := partial "count-videos" . }}
+
+<header class="clearfix">
+	<h1>{{ with site.Params.title }}{{ . | markdownify }}{{ end }}<span>{{ with site.Params.subtitle }}{{ . | markdownify }}{{ end }}</span></h1>
+	<h4><span>{{ $count_videos }}&nbsp;{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}</span></h4>
+	<p><span><em>(maj au {{ dateFormat $_fdate now }})</em></span></p>
+</header>
