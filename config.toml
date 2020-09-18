@@ -13,12 +13,6 @@ publishdir  = "public"
 
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 
-# Unused
-[taxonomies]
-   circuit = "circuits"
-   title = "titles"
-   year = "years"
-
 [build]
   writeStats = false
 
