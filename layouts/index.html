@@ -31,7 +31,7 @@
 			{{ $dict_tags := partial "axes-dict" . }}
 			{{- $circuits 	:= index $dict_tags "circuits" }}
 			{{- $dates 		:= index $dict_tags "dates" }}
-			{{- $titles 	:= index $dict_tags "titles" }}
+			{{- $saisons 	:= index $dict_tags "saisons" }}
 			{{- $villes 	:= index $dict_tags "villes" }}
 			{{- $casinos 	:= index $dict_tags "casinos" }}
 
@@ -43,7 +43,7 @@
 				<h2>Catégories de vidéos</h2>
 				{{- partial "button-category" (dict "types" $circuits "style" "success") }}
 				{{- partial "button-category" (dict "types" $dates    "style" "info") }}
-				{{- partial "button-category" (dict "types" $titles   "style" "warning") }}
+				{{- partial "button-category" (dict "types" $saisons   "style" "warning") }}
 				{{- partial "button-category" (dict "types" $villes   "style" "danger") }}
 				{{- partial "button-category" (dict "types" $casinos   "style" "secondary") }}
 			</div>
@@ -51,7 +51,7 @@
 			<!-- Show all zones -->
 			{{- partial "video-unit" (dict "context" $ "type" "circuit" "types" $circuits "style" "success") }}
 			{{- partial "video-unit" (dict "context" $ "type" "date"    "types" $dates    "style" "info") }}
-			{{- partial "video-unit" (dict "context" $ "type" "title"   "types" $titles   "style" "warning") }}
+			{{- partial "video-unit" (dict "context" $ "type" "saison"   "types" $saisons   "style" "warning") }}
 			{{- partial "video-unit" (dict "context" $ "type" "ville"    "types" $villes   "style" "danger") }}
 			{{- partial "video-unit" (dict "context" $ "type" "casino"   "types" $casinos   "style" "secondary") }}
 
@@ -107,7 +107,7 @@
 	<!-- Init le dict des divers axes désirés -->
 	{{- $circuits := dict }}
 	{{- $dates    := dict }}
-	{{- $titles   := dict }}
+	{{- $saisons   := dict }}
 	{{- $casinos   := dict }}
 	{{- $villes   := dict }}
 
@@ -115,7 +115,7 @@
 	{{- range $.Site.Data.items.items }}
 		{{- $circuits = partial "create-axe-dict" (dict "type" .circuit "types" $circuits) }}
 		{{- $dates    = partial "create-axe-dict" (dict "type" .date    "types" $dates) }}
-		{{- $titles   = partial "create-axe-dict" (dict "type" .title   "types" $titles) }}
+		{{- $saisons   = partial "create-axe-dict" (dict "type" .saison   "types" $saisons) }}
 		{{- $villes   = partial "create-axe-dict" (dict "type" .ville    "types" $villes) }}
 		{{- $casinos   = partial "create-axe-dict" (dict "type" .casino   "types" $casinos) }}
 	{{- end  }}
@@ -124,12 +124,12 @@
 	{{- range $.Site.Data.items.items }}
 		{{- $circuits = partial "counter-axe-dict" (dict "type" .circuit "types" $circuits) }}
 		{{- $dates    = partial "counter-axe-dict" (dict "type" .date    "types" $dates) }}
-		{{- $titles   = partial "counter-axe-dict" (dict "type" .title   "types" $titles) }}
+		{{- $saisons   = partial "counter-axe-dict" (dict "type" .saison   "types" $saisons) }}
 		{{- $villes   = partial "counter-axe-dict" (dict "type" .ville    "types" $villes) }}
 		{{- $casinos   = partial "counter-axe-dict" (dict "type" .casino   "types" $casinos) }}
 	{{- end }}
 
-	{{- $axes_dict := (dict "circuits" $circuits "dates" $dates "titles" $titles "villes" $villes "casinos" $casinos )}}
+	{{- $axes_dict := (dict "circuits" $circuits "dates" $dates "saisons" $saisons "villes" $villes "casinos" $casinos )}}
 	{{ return $axes_dict }}
 {{- end }}
 
@@ -169,14 +169,14 @@
 						<a href="{{.url}}"
 							onclick="download()"
 							data-largesrc="{{.image}}"
-							data-title="{{.title}} / {{ .episode }}"
+							data-title="{{.saison}} / {{ .episode }}"
 							data-description="{{ .description }} ({{ .date }}) {{ with .casino }}- {{ . }}{{ end }} {{ with .ville }}- {{ . }}{{ end }}"
 							data-buttontext="{{.buttontext}}">
 
 							<img src="{{.thumb}}" alt="{{.alt}}"/>
 						</a>
 						<p>
-							<strong>{{ .title }}</strong>
+							<strong>{{ .saison }}</strong>
 							<br>
 							<em>{{ .episode }}</em>
 						</p>
