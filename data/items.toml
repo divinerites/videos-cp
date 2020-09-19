@@ -130,8 +130,6 @@ image = "images/full/ppt.png"
 thumb = "images/thumbs/ppt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?hf6fydtynywefvj6wg78"
-
-
 [[items]]
 saison = "PPT Saison 3"
 episode = "Episode 1 - Heads-Up"
@@ -204,9 +202,6 @@ image = "images/full/ppt.png"
 thumb = "images/thumbs/ppt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?d79zt8aunppgn2iat53a"
-
-
-
 [[items]]
 saison = "WPT Saison 08"
 episode = "Ep 3 - part 2"
@@ -361,8 +356,6 @@ image = "images/full/wpt.png"
 thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?6z1w2h4sdfardr6nyy4u"
-
-
 [[items]]
 saison = "WPT Saison 09"
 episode = "Ep 1 - part 1"
@@ -459,7 +452,6 @@ image = "images/full/wpt.png"
 thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?224q6bfzmt6ehhifu2fd"
-
 [[items]]
 saison = "NHUPC 2005"
 episode = "Episode 0 (draft)"
@@ -551,8 +543,6 @@ image = "images/full/5.png"
 thumb = "images/thumbs/5.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?udnwjyrgg4fdjx1ti9f0"
-
-
 [[items]]
 saison = "NHUPC 2006"
 episode = "Episode 0 (draft)"
@@ -709,8 +699,6 @@ image = "images/full/5.png"
 thumb = "images/thumbs/5.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?yn6n79pn09bywhpug8ln"
-
-
 [[items]]
 saison = "NHUPC 2007"
 episode = "Episode 1"
@@ -815,8 +803,6 @@ image = "images/full/5.png"
 thumb = "images/thumbs/5.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?dt7bux5o68y4zr2muxrk"
-
-
 [[items]]
 saison = "NHUPC 2008"
 episode = "Episode 1 - Round of 64"
@@ -908,8 +894,6 @@ image = "images/full/5.png"
 thumb = "images/thumbs/5.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?sd93q1aurrm2a0di2bqv"
-
-
 [[items]]
 saison = "WPT National 2011"
 episode = "High Roller - Episode 1"
@@ -946,7 +930,6 @@ image = "images/full/wpt.png"
 thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?t82s9szgjp7aall44eu1"
-
 [[items]]
 saison = "WPT National 2011"
 episode = "Diamond Championship - Episode 1"
@@ -983,8 +966,6 @@ image = "images/full/wpt.png"
 thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?xo3ziebj42eywlpg3qbx"
-
-
 [[items]]
 saison = "Aussie Millions 2007"
 episode = "Episode 1"
@@ -1081,8 +1062,6 @@ image = "images/full/5.png"
 thumb = "images/thumbs/5.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?axaoftgk21fwqk0llx1p"
-
-
 [[items]]
 saison = "RTL9 Poker Tour 2008"
 episode = "Saison 1 - Ep 1 - Finale Mensuelle 1"
@@ -1163,8 +1142,6 @@ image = "images/full/5.png"
 thumb = "images/thumbs/5.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?kzn4m29tusv5d9ec1g04"
-
-
 [[items]]
 saison = "RTL9 Poker Tour 2009"
 episode = "Saison 2 - Ep 1 - Tournoi 1"
@@ -1275,9 +1252,6 @@ image = "images/full/5.png"
 thumb = "images/thumbs/5.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?4aokt884r1lk48j5wwjf"
-
-
-
 [[items]]
 saison = "Internationaux de France Heads-Up 2010"
 episode = "Episode 1"
@@ -1338,8 +1312,6 @@ image = "images/full/5.png"
 thumb = "images/thumbs/5.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?41mmmths5qf1qniljsbc"
-
-
 [[items]]
 saison = "WSOP 2009"
 episode = "Episode 1 : #2 (40th anniv) 1/2"
@@ -1724,8 +1696,6 @@ image = "images/full/wsop.png"
 thumb = "images/thumbs/wsop.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?8pnjm4hkuj2ly2dks1ni"
-
-
 [[items]]
 saison = "WSOP 2010"
 episode = "Episode 1 : Poker Players Championship (Event #2) 1/2"
@@ -2110,8 +2080,6 @@ image = "images/full/wsop.png"
 thumb = "images/thumbs/wsop.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?96begss5ccqvuu8xcycq"
-
-
 [[items]]
 saison = "WPT Saison 02"
 episode = "Episode 1 : Grand Prix de Paris"
@@ -2280,9 +2248,6 @@ image = "images/full/wpt.png"
 thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?6964tez09ll1rkr0a2yg"
-
-
-
 [[items]]
 saison = "WPT Saison 03"
 episode = "Episode 1 : L.A. Poker Classic"
@@ -2331,8 +2296,6 @@ image = "images/full/wpt.png"
 thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?gpndbgwzug8yjf3uu9eb"
-
-
 [[items]]
 saison = "WPT Saison 04"
 episode = "Episode 1 : Mirage Poker Showdown"
@@ -2513,9 +2476,6 @@ image = "images/full/wpt.png"
 thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?xnos4bk4tu98ex9xatho"
-
-
-
 [[items]]
 saison = "WSOP 1973"
 episode = "Main Event 1973"
@@ -2880,7 +2840,6 @@ image = "images/full/wsop.png"
 thumb = "images/thumbs/wsop.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?dqq0gcjdm49hah6u4sfy"
-
 [[items]]
 saison = "WSOP 2004"
 episode = "Main Event 2004 - Nuit du poker C+ (1/2)"
@@ -2905,7 +2864,6 @@ image = "images/full/wsop.png"
 thumb = "images/thumbs/wsop.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?yy20n55lelagrpeac7bd"
-
 [[items]]
 saison = "WSOP 2004"
 episode = "Main Event 2004 - Autre release (1/4)"
@@ -2954,7 +2912,6 @@ image = "images/full/wsop.png"
 thumb = "images/thumbs/wsop.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?vcwbscijeu71l4gqp6cd"
-
 [[items]]
 saison = "WSOP 2004"
 episode = "Event 2 : $2000 No Limit Hold'em"
@@ -3137,7 +3094,6 @@ image = "images/full/wsop.png"
 thumb = "images/thumbs/wsop.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?9ey0xmwj429efwhf6dx8"
-
 [[items]]
 saison = "WSOP 2004"
 episode = "Main Event - Episode 1 (DVDRip)"
@@ -3281,8 +3237,6 @@ image = "images/full/wsop.png"
 thumb = "images/thumbs/wsop.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?o3pqnjj6nf63d0naidb1"
-
-
 [[items]]
 saison = "EPT saison 7"
 episode = "Episode 1 - Londres (1/5)"
@@ -3463,9 +3417,6 @@ image = "images/full/ept.png"
 thumb = "images/thumbs/ept.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?109ze6sz8grasgj8tgx4"
-
-
-
 [[items]]
 saison = "WPT Saison 05"
 episode = "Episode 1 - The Mirage Poker Showdown"
@@ -3658,3 +3609,211 @@ image = "images/full/wpt.png"
 thumb = "images/thumbs/wpt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?7kaqxpvsa0ns4682yxtg"
+
+
+
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 1 - The Mirage Poker Showdown"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Las Vegas"
+casino = "Mirage"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?5jmyk62s25z5txh7v5sl"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 2 - Gulf Coast Poker Championship"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Biloxi"
+casino = "Beau Rivage"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?ghwe4mopcy4h98xaj609"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 3 - Borgata Poker Open"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Atlantic City"
+casino = "Borgata"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?wvox10cw4g6kdb69y6nm"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 4 - Legends of Poker"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Los Angeles"
+casino = "Bicycle Casino"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?8mec58tnle4yt8dattlr"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 5 - North American Poker Championship"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Niagara Falls"
+casino = "Fallsview Casino Resort"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?a4yil09xfqoa5i6j4r3f"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 6 - Foxwoods World Poker Final"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Mashantucket"
+casino = "Foxwoods Casino"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?lwphnms5c3bwshi1ixyk"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 7 - Turks and Caicos Poker Classic"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Turks and Caicos Islands"
+casino = "Players Club"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?esjibi6n1dp77gb1w8wh"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 8 - WPT Spanish Championship"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Barcelonne"
+casino = "Casino Barcelona"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?4pcpdwvhgaq6kdvxy2i5"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 9 - Bay 101 Shooting Star"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2008"
+ville = "San José"
+casino = "Bay 101"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?7xpzx8ybkpj9ee983jo1"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 10 - Foxwoods Poker Classic"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Mashantucket"
+casino = "Foxwoods Casino"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?uld5elo0f1op9zun3xn9"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 11 - Ladie's Night V"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Los Angeles"
+casino = "Bicycle Casino"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?r0lqv3brhf9jo6v1tpxq"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 12 - Celebrity Invitational"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Los Angeles"
+casino = "Commerce Casino"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?mjb0dqci1wcfu7re3ju8"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 13 - L.A. Poker Classic"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Las Vegas"
+casino = "Commerce Casino"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?gyk78lmv01p9zb7c69sl"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 14 - Borgata Poker Classic"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Atlantic City"
+casino = "Borgata"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?lkfsudliema798qqmrgv"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 15 - Doyle Brunson Five Diamond World Poker Classic"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Las Vegas"
+casino = "Bellagio"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?twbtgoqwinlnf5hih3oh"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode 16 - WPT Championship"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2008"
+ville = "Las Vegas"
+casino = "Bellagio"
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?2v4eqqnpbghjm5z782dg"
+[[items]]
+saison = "WPT Saison 06"
+episode = "Episode Extra - WPT Spanish Championship"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2007"
+ville = "Barcelonne"
+casino = "Casino Barcelona"
+vo = true
+image = "images/full/wpt.png"
+thumb = "images/thumbs/wpt.png"
+alt = "Hugrid Theme"
+url = "https://1fichier.com/?5i7e1i0uk9vs28lu2po1"
