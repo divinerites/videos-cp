@@ -182,7 +182,7 @@
 						<p>
 							<strong>{{ .saison }}</strong>
 							<br>
-							<em>{{ .episode }}</em>
+							<em>{{ .episode }}{{ if .vo }}&nbsp;<span class="badge badge-secondary">V.O.</span>{{ end }}</em>
 						</p>
 				</li>
 				{{- end }}
