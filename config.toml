@@ -53,11 +53,11 @@ notAlternative = true
 
 [params]
    # Meta
-   title = "CP Vidéos : catalogue de vidéos de Poker live"
-   subtitle = "Catalogue de vidéos de poker live, préservées et présentées via Club Poker"
+   title = "CP Vidéos : catalogue de <i class='fas fa-film'></i> vidéos de Poker live"
+   subtitle = "Vidéos préservées et présentées via Club Poker"
    titleMenu = "CP Vidéos"
    author = "Divinerites"
-   description = "Catalogue de vidéos de poker live, préservées et présentées via Club Poker"
+   description = "Catalogue de vidéos <i class='fas fa-film'></i> de poker live, préservées et présentées via Club Poker"
    keywords = "Hugo, Poker, Vidéos, ClubPoker, EPT, WSOP, WPT"
 
    # Preview container button text

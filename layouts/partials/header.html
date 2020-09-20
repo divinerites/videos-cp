@@ -4,8 +4,8 @@
 <div class="container">
 	<header class="clearfix">
 		<!-- En tete de page -->
-		<h1>{{ with site.Params.title }}{{ . | markdownify }}{{ end }}<span>{{ with site.Params.subtitle }}{{ . | markdownify }}{{ end }}</span></h1>
-		<h4><span>{{ $count_videos }}&nbsp;{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}</span></h4>
+		<h1>{{ with site.Params.title }}{{ . | safeHTML }}{{ end }}<span>{{ with site.Params.subtitle }}{{ . | markdownify }}{{ end }}</span></h1>
+		<h5><span class="badge badge-secondary">{{ $count_videos }}</span><span>&nbsp;{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}</span></h5>
 		<p><span><em>(maj au {{ dateFormat $_fdate now }})</em></span></p>
 
 		<!-- Bootstrap Menus -->
