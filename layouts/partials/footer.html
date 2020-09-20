@@ -6,5 +6,12 @@
 		{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}<br>
 		Créé avec <a href="https://www.gohugo.io" title="link">gohugo.io</a> v{{ hugo.Version }} ({{ dateFormat $_fdate now }})
 		</p>
+		<p class="zfooter">
+			Ce site respecte le RGPD, le CCPA.<br>
+			Lors de votre navigation, nous ne collectons ou ne stockons aucune information personnelle (hormis le formulaire de contact).<br>
+			Nous n’utilisons ni Google Analytics® , ni cookie de suivi personnel lors de votre navigation.<br>
+			Nous sommes respectueux de votre vie privée. Nous ne transmettons ou ne revendons aucune information.<br>
+			<a href="https://plausible.io/videos-cp?period=30d" target="_blank">Consulter les statistiques du site</a>
+		</p>
 	</div>
 </footer>
