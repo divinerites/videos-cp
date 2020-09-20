@@ -1,21 +1,31 @@
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{{ site.Title }}</title>
-		<meta name="description" content="{{ with site.Params.description }}{{ . }}{{ end }}" />
-		<meta name="keywords" content="{{ with site.Params.keywords }}{{ . }}{{ end }}" />
-		<meta name="author" content="{{ with site.Params.author }}{{ . }}{{ end }}" />
-		<link rel="icon" href="{{ site.Params.BaseURL }}favicon.ico" />
-		{{ hugo.Generator }}
-		<style>
-		body {
-		background: {{ site.Params.bodybgcolor }};
-		color: {{ site.Params.bodytextcolor }};
-		}
-		</style>
-		<link rel="stylesheet" type="text/css" href="/css/default.css" />
-		<link rel="stylesheet" type="text/css" href="/css/component.css" />
-		{{ range site.Params.custom_css }}
-			<link rel="stylesheet" href="{{ . }}">
-		{{ end }}
-		<script src="/js/modernizr.custom.js"></script>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ site.Title }}</title>
+<meta name="description" content="{{ with site.Params.description }}{{ . }}{{ end }}" />
+<meta name="keywords" content="{{ with site.Params.keywords }}{{ . }}{{ end }}" />
+<meta name="author" content="{{ with site.Params.author }}{{ . }}{{ end }}" />
+
+<link rel="icon" href="{{ site.Params.BaseURL }}favicon.ico" />
+
+{{ hugo.Generator }}
+
+<!-- Assets CSS -->
+{{- $css1 := resources.Get "css/default.css"}}
+{{- $css2 := resources.Get "css/component.css"}}
+{{- $css := slice $css1 $css2 | resources.Concat "css/css.css" }}
+{{ range site.Params.custom_css }}
+	{{- $cssX := resources.Get . }}
+	{{- $css = slice $css $cssX | resources.Concat "css/style.css" }}
+{{ end }}
+{{- if hugo.IsProduction }}
+   {{- $css = $css | minify | fingerprint "sha384" }}
+{{- end }}
+<link href="{{ $css.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $css.Data.Integrity }}"{{ end }} rel="stylesheet" type="text/css">
+
+<!-- Scripts -->
+{{- $js := resources.Get "js/modernizr.custom.js" }}
+{{- if hugo.IsProduction }}
+	{{- $js = $js | minify | fingerprint "sha384" }}
+{{- end }}
+<script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }} ></script>
