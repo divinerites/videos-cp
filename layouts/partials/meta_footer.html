@@ -1,5 +1,9 @@
 		{{- partial "footer.html" . }}
 
 		{{- partial "scripts.html" . }}
+
+		<!-- preload link hover -->
+		{{ partialCached "jslibs/instantpage/script-src.html" "-" }}
+
 	</body>
 </html>
