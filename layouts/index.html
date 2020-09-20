@@ -16,19 +16,12 @@
 	<!-- Affiche les tags -->
 	<div class="tags">
 		<h2>Catégories de vidéos</h2>
-		{{- partial "button-category" (dict "types" $circuits "style" "success") }}
-		{{- partial "button-category" (dict "types" $dates    "style" "info") }}
-		{{- partial "button-category" (dict "types" $saisons  "style" "warning") }}
-		{{- partial "button-category" (dict "types" $villes   "style" "danger") }}
-		{{- partial "button-category" (dict "types" $casinos  "style" "secondary") }}
+		{{- partial "button-category" (dict "types" $circuits "style" "success"   "root" "circuits") }}
+		{{- partial "button-category" (dict "types" $dates    "style" "info" 	  "root" "dates") }}
+		{{- partial "button-category" (dict "types" $saisons  "style" "warning"	  "root" "saisons") }}
+		{{- partial "button-category" (dict "types" $villes   "style" "danger"	  "root" "villes") }}
+		{{- partial "button-category" (dict "types" $casinos  "style" "secondary" "root" "casinos") }}
 	</div>
-
-	<!-- Show all zones -->
-	{{- partial "video-unit" (dict "context" $ "type" "circuit" "types" $circuits "style" "success") }}
-	{{- partial "video-unit" (dict "context" $ "type" "date"    "types" $dates    "style" "info") }}
-	{{- partial "video-unit" (dict "context" $ "type" "saison"  "types" $saisons  "style" "warning") }}
-	{{- partial "video-unit" (dict "context" $ "type" "ville"   "types" $villes   "style" "danger") }}
-	{{- partial "video-unit" (dict "context" $ "type" "casino"  "types" $casinos  "style" "secondary") }}
 
 </div>
 

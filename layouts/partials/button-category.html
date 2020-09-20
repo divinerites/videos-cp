@@ -2,11 +2,10 @@
 	Affiche les boutons des catégories
 	Paramètre : (dict "types" $circuits "style" "success")
 -->
-{{- define "partials/button-category" }}
-	{{- $style := .style }}
-	{{- range $k, $i := .types }}
-		<a href="#{{ $k }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }}">
-			{{ $k }} <span class="badge badge-light">{{ $i }}</span>
-		</a>
-	{{- end }}
+{{- $style := .style }}
+{{ $root := .root | default ""}}
+{{- range $k, $i := .types }}
+	<a href="{{ $root }}#{{ $k }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }}">
+		{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+	</a>
 {{- end }}
