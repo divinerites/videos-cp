@@ -2,12 +2,10 @@
 	Maj des dict "types" par axe
 	(dict "type" .circuit "types" $circuits)
 -->
-{{- define "partials/create-axe-dict" }}
-	{{- $types := .types }}
-	{{- if .type }}
-		{{ $temp := dict .type 0 }}
-		{{ $temp_new := merge $types $temp }}
-		{{ $types = $temp_new }}
-	{{- end }}
-	{{ return $types }}
+{{- $types := .types }}
+{{- if .type }}
+	{{ $temp := dict .type 0 }}
+	{{ $temp_new := merge $types $temp }}
+	{{ $types = $temp_new }}
 {{- end }}
+{{ return $types }}
