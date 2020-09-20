@@ -1,0 +1,38 @@
+<!--
+	Affiche les vidéos indiviuelles
+	Paramètre : (dict context $ "type" "circuit" "types" $circuits "style" "success")
+-->
+{{- $type  := .type }}
+{{- $types := .types }}
+{{- $style := .style }}
+
+{{- range $k, $i := $types }}
+	<!-- Show videos for this specific circuit -->
+	<a id="{{ $k }}"></a>
+	<div class="main">
+		<h2 class="zvideo alert alert-{{ $style }}">
+			{{ $type | humanize }} : {{ $k }} <span class="badge badge-pill badge-light badge-{{ $style }}">{{ $i }}</span>
+			<a href="#top" role="button" class="btn btn-{{ $style }} btn-sm float-right">&#x2191;Retour aux choix de catégories</a>
+		</h2>
+		<ul id="og-grid" class="og-grid">
+			{{- range where $.context.Site.Data.items.items $type $k}}
+			<li>
+					<a href="{{.url}}"
+						data-largesrc="{{.image}}"
+						data-title="{{.saison}} / {{ .episode }}"
+						data-description="{{ .description }} ({{ .date }}) {{ with .casino }}- {{ . }}{{ end }} {{ with .ville }}- {{ . }}{{ end }}"
+						data-buttontext="{{.buttontext}}">
+
+						<img src="{{.thumb}}" alt="{{.alt}}" width="250" height="250"/>
+					</a>
+					<p>
+						<strong>{{ .saison }}</strong>
+						<br>
+						<em>{{ .episode }}{{ if .vo }}&nbsp;<span class="badge badge-secondary">V.O.</span>{{ end }}</em>
+					</p>
+			</li>
+			{{- end }}
+		</ul>
+	</div>
+	<!-- End Video -->
+{{- end }}

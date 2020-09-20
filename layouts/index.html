@@ -1,193 +1,28 @@
-<!DOCTYPE html>
-<html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+{{ partial "meta_header.html" . }}
 
-	<head>
-		{{- $isProd := hugo.IsProduction -}}
-		{{ partial "head.html" . }}
+<div class="container">
 
-		<!-- Plausible Analytics - remplace Google Analytics -->
-		{{ partial "plausible_head.html" . }}
+	<!-- Initialise les divers dictionnaires des axes -->
+	{{ $dict_tags := partial "axes-dict" . }}
+	{{- $circuits 	:= index $dict_tags "circuits" }}
+	{{- $dates 		:= index $dict_tags "dates" }}
+	{{- $saisons 	:= index $dict_tags "saisons" }}
+	{{- $villes 	:= index $dict_tags "villes" }}
+	{{- $casinos 	:= index $dict_tags "casinos" }}
 
-		<!-- Bootstrap from hugo module -->
-		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<!-- AFFICHAGE -->
+	<a id="top"></a>
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	</head>
+	<!-- Affiche les tags -->
+	<div class="tags">
+		<h2>Catégories de vidéos</h2>
+		{{- partial "button-category" (dict "types" $circuits "style" "success"   "root" "circuits") }}
+		{{- partial "button-category" (dict "types" $dates    "style" "info" 	  "root" "dates") }}
+		{{- partial "button-category" (dict "types" $saisons  "style" "warning"	  "root" "saisons") }}
+		{{- partial "button-category" (dict "types" $villes   "style" "danger"	  "root" "villes") }}
+		{{- partial "button-category" (dict "types" $casinos  "style" "secondary" "root" "casinos") }}
+	</div>
 
-	<body>
-		<div class="container">
+</div>
 
-			{{ partial "header.html" . }}
-
-			<!-- Initialise les divers dictionnaires des axes -->
-			{{ $dict_tags := partial "axes-dict" . }}
-			{{- $circuits 	:= index $dict_tags "circuits" }}
-			{{- $dates 		:= index $dict_tags "dates" }}
-			{{- $saisons 	:= index $dict_tags "saisons" }}
-			{{- $villes 	:= index $dict_tags "villes" }}
-			{{- $casinos 	:= index $dict_tags "casinos" }}
-
-			<!-- AFFICHAGE -->
-			<a id="top"></a>
-
-			<!-- Affiche les tags -->
-			<div class="tags">
-				<h2>Catégories de vidéos</h2>
-				{{- partial "button-category" (dict "types" $circuits "style" "success") }}
-				{{- partial "button-category" (dict "types" $dates    "style" "info") }}
-				{{- partial "button-category" (dict "types" $saisons  "style" "warning") }}
-				{{- partial "button-category" (dict "types" $villes   "style" "danger") }}
-				{{- partial "button-category" (dict "types" $casinos  "style" "secondary") }}
-			</div>
-
-			<!-- Show all zones -->
-			{{- partial "video-unit" (dict "context" $ "type" "circuit" "types" $circuits "style" "success") }}
-			{{- partial "video-unit" (dict "context" $ "type" "date"    "types" $dates    "style" "info") }}
-			{{- partial "video-unit" (dict "context" $ "type" "saison"  "types" $saisons  "style" "warning") }}
-			{{- partial "video-unit" (dict "context" $ "type" "ville"   "types" $villes   "style" "danger") }}
-			{{- partial "video-unit" (dict "context" $ "type" "casino"  "types" $casinos  "style" "secondary") }}
-
-			<!-- Footer -->
-			{{- partial "footer.html" . }}
-		</div>
-		{{- partial "scripts.html" . }}
-	</body>
-</html>
-
-
-<!--
-	#########################################
-	####  Factorise via Inline Partials  ####
-	#########################################
--->
-
-<!--
-	Compte le nombre de vidéos
--->
-{{- define "partials/count-videos" }}
-	{{- $count := 0 }}
-	{{- range $.Site.Data.items.items }}
-		{{- $count = add $count 1 }}
-	{{- end }}
-	{{ return $count }}
-{{- end }}
-
-<!--
-	Maj des dict "types" par axe
-	(dict "type" .circuit "types" $circuits)
--->
-{{- define "partials/create-axe-dict" }}
-	{{- $types := .types }}
-	{{- if .type }}
-		{{ $temp := dict .type 0 }}
-		{{ $temp_new := merge $types $temp }}
-		{{ $types = $temp_new }}
-	{{- end }}
-	{{ return $types }}
-{{- end }}
-
-<!--
-	+1 au nombre actuel de videos pour ce tag
-	(dict "type" .circuit "types" $circuits)
--->
-{{- define "partials/counter-axe-dict" }}
-	{{- $types := .types }}
-	{{- if .type }}
-		{{- $count := index $types .type }}
-		{{- $count := add $count 1 }}
-		{{- $temp  := dict .type $count }}
-		{{- $temp_new := merge $types $temp }}
-		{{- $types = $temp_new }}
-	{{- end }}
-	{{ return $types }}
-{{- end }}
-
-<!--
-	Initialise les divers dictionnaires des axes
-	Return dict des divers axes
--->
-{{- define "partials/axes-dict" }}
-	<!-- Init le dict des divers axes désirés -->
-	{{- $circuits := dict }}
-	{{- $dates    := dict }}
-	{{- $saisons  := dict }}
-	{{- $casinos  := dict }}
-	{{- $villes   := dict }}
-
-	<!-- Maj des dict "types" par axe [sans totaux] -->
-	{{- range $.Site.Data.items.items }}
-		{{- $circuits = partial "create-axe-dict" (dict "type" .circuit "types" $circuits) }}
-		{{- $dates    = partial "create-axe-dict" (dict "type" .date    "types" $dates) }}
-		{{- $saisons  = partial "create-axe-dict" (dict "type" .saison  "types" $saisons) }}
-		{{- $villes   = partial "create-axe-dict" (dict "type" .ville   "types" $villes) }}
-		{{- $casinos  = partial "create-axe-dict" (dict "type" .casino  "types" $casinos) }}
-	{{- end  }}
-
-	<!-- +1 au nombre actuel de videos pour ce tag -->
-	{{- range $.Site.Data.items.items }}
-		{{- $circuits = partial "counter-axe-dict" (dict "type" .circuit "types" $circuits) }}
-		{{- $dates    = partial "counter-axe-dict" (dict "type" .date    "types" $dates) }}
-		{{- $saisons  = partial "counter-axe-dict" (dict "type" .saison  "types" $saisons) }}
-		{{- $villes   = partial "counter-axe-dict" (dict "type" .ville   "types" $villes) }}
-		{{- $casinos  = partial "counter-axe-dict" (dict "type" .casino  "types" $casinos) }}
-	{{- end }}
-
-	{{- $axes_dict := (dict "circuits" $circuits "dates" $dates "saisons" $saisons "villes" $villes "casinos" $casinos )}}
-	{{ return $axes_dict }}
-{{- end }}
-
-<!--
-	Affiche les boutons des catégories
-	Paramètre : (dict "types" $circuits "style" "success")
--->
-{{- define "partials/button-category" }}
-	{{- $style := .style }}
-	{{- range $k, $i := .types }}
-		<a href="#{{ $k }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }}">
-			{{ $k }} <span class="badge badge-light">{{ $i }}</span>
-		</a>
-	{{- end }}
-{{- end }}
-
-<!--
-	Affiche les vidéos indiviuelles
-	Paramètre : (dict context $ "type" "circuit" "types" $circuits "style" "success")
--->
-{{- define "partials/video-unit" }}
-	{{- $type  := .type }}
-	{{- $types := .types }}
-	{{- $style := .style }}
-
-	{{- range $k, $i := $types }}
-		<!-- Show videos for this specific circuit -->
-		<a id="{{ $k }}"></a>
-		<div class="main">
-			<h2 class="zvideo alert alert-{{ $style }}">
-				{{ $type | humanize }} : {{ $k }} <span class="badge badge-pill badge-light badge-{{ $style }}">{{ $i }}</span>
-				<a href="#top" role="button" class="btn btn-{{ $style }} btn-sm float-right">&#x2191;Retour aux choix de catégories</a>
-			</h2>
-			<ul id="og-grid" class="og-grid">
-				{{- range where $.context.Site.Data.items.items $type $k}}
-				<li>
-						<a href="{{.url}}"
-							data-largesrc="{{.image}}"
-							data-title="{{.saison}} / {{ .episode }}"
-							data-description="{{ .description }} ({{ .date }}) {{ with .casino }}- {{ . }}{{ end }} {{ with .ville }}- {{ . }}{{ end }}"
-							data-buttontext="{{.buttontext}}">
-
-							<img src="{{.thumb}}" alt="{{.alt}}" width="250" height="250"/>
-						</a>
-						<p>
-							<strong>{{ .saison }}</strong>
-							<br>
-							<em>{{ .episode }}{{ if .vo }}&nbsp;<span class="badge badge-secondary">V.O.</span>{{ end }}</em>
-						</p>
-				</li>
-				{{- end }}
-			</ul>
-		</div>
-		<!-- End Video -->
-	{{- end }}
-{{- end }}
+{{- partial "meta_footer.html" . }}

@@ -1,8 +1,37 @@
 {{- $_fdate := site.Params.dateFormatTime }}
 {{- $count_videos := partial "count-videos" . }}
 
-<header class="clearfix">
-	<h1>{{ with site.Params.title }}{{ . | markdownify }}{{ end }}<span>{{ with site.Params.subtitle }}{{ . | markdownify }}{{ end }}</span></h1>
-	<h4><span>{{ $count_videos }}&nbsp;{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}</span></h4>
-	<p><span><em>(maj au {{ dateFormat $_fdate now }})</em></span></p>
-</header>
+<div class="container">
+	<header class="clearfix">
+		<!-- En tete de page -->
+		<h1>{{ with site.Params.title }}{{ . | markdownify }}{{ end }}<span>{{ with site.Params.subtitle }}{{ . | markdownify }}{{ end }}</span></h1>
+		<h4><span>{{ $count_videos }}&nbsp;{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}</span></h4>
+		<p><span><em>(maj au {{ dateFormat $_fdate now }})</em></span></p>
+
+		<!-- Bootstrap Menus -->
+		{{ $currentPage := . }}
+
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="/">{{ site.Params.titleMenu }}</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			  	<div class="navbar-nav">
+					{{ range .Site.Menus.main }}
+						{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+							<a class="nav-link active" href="{{ .URL }}">{{ .Name }} <span class="sr-only">(current)</span></a>
+						{{ else }}
+							<a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+						{{end}}
+					{{ end }}
+			   </div>
+			</div>
+
+			{{ site.Params.titleMenu }}
+
+		 </nav>
+
+	</header>
+</div>

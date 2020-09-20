@@ -1,0 +1,11 @@
+<!--
+	Affiche les boutons des catégories
+	Paramètre : (dict "types" $circuits "style" "success")
+-->
+{{- $style := .style }}
+{{ $root := .root | default ""}}
+{{- range $k, $i := .types }}
+	<a href="{{ $root }}#{{ $k }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }}">
+		{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+	</a>
+{{- end }}

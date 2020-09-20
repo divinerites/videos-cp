@@ -1,0 +1,11 @@
+<!--
+	Maj des dict "types" par axe
+	(dict "type" .circuit "types" $circuits)
+-->
+{{- $types := .types }}
+{{- if .type }}
+	{{ $temp := dict .type 0 }}
+	{{ $temp_new := merge $types $temp }}
+	{{ $types = $temp_new }}
+{{- end }}
+{{ return $types }}
