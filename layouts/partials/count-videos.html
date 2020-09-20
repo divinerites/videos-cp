@@ -1,0 +1,10 @@
+<!--
+	Compte le nombre de vidéos
+-->
+{{- define "partials/count-videos" }}
+	{{- $count := 0 }}
+	{{- range $.Site.Data.items.items }}
+		{{- $count = add $count 1 }}
+	{{- end }}
+	{{ return $count }}
+{{- end }}

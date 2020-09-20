@@ -1,0 +1,23 @@
+{{ partial "meta_header.html" . }}
+
+<div class="container">
+
+	<!-- Initialise les divers dictionnaires des axes -->
+	{{ $dict_tags := partial "axes-dict" . }}
+	{{- $liste 	:= index $dict_tags .Params.tag_pluriel }}
+
+	<!-- AFFICHAGE -->
+	<a id="top"></a>
+
+	<!-- Affiche les tags -->
+	<div class="tags">
+		<h2>{{ .Params.title }}</h2>
+		{{- partial "button-category" (dict "types" $liste  "style" .Params.tag_style ) }}
+	</div>
+
+	<!-- Show all zones -->
+	{{- partial "video-unit" (dict "context" $ "type" .Params.tag_singulier "types" $liste  "style" .Params.tag_style ) }}
+
+</div>
+
+{{- partial "meta_footer.html" . }}
