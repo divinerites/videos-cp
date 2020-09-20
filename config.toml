@@ -41,6 +41,7 @@ notAlternative = true
    # Meta
    title = "CP Vidéos : catalogue de vidéos de Poker live"
    subtitle = "Catalogue de vidéos de poker live, préservées et présentées via Club Poker"
+   titleMenu = "CP Vidéos"
    author = "Divinerites"
    description = "Catalogue de vidéos de poker live, préservées et présentées via Club Poker"
    keywords = "Hugo, Poker, Vidéos, ClubPoker, EPT, WSOP, WPT"
@@ -58,6 +59,9 @@ notAlternative = true
    dateFormat = "2 Jan 2006"
    dateFormatFull = "02/01/2006"
    dateFormatTime = "2 Jan 2006 15:04"
+
+   # menu
+   sectionPagesMenu = "main"
 
    # add extra-css
    custom_css = ['/css/extra1.css']
