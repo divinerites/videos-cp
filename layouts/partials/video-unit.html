@@ -17,11 +17,37 @@
 		<ul id="og-grid" class="og-grid">
 			{{- range where $.context.Site.Data.items.items $type $k}}
 			<li>
+					{{ $ville  := "" }}
+					{{ $casino := "" }}
+					{{ $sixmax := "" }}
+					{{ $source := ""}}
+					{{ $vo := ""}}
+					{{ $buyin := ""}}
+					{{ $variante := ""}}
+
+					{{ with .ville }}{{ $ville = printf " - %s" . }}{{ end }}
+					{{ with .casino }}{{ $casino = printf " - %s" . }}{{ end }}
+					{{ with .sixmax }}{{ $sixmax = "<span class='badge badge-secondary'>6max</span>" }}{{ end }}"
+					{{ with .source }}{{ $source = printf "Source : %s" . }}{{ end }}
+					{{ with .vo }}{{ $vo = printf "<span class='badge badge-secondary'>V.O.</span>" }}{{ end }}
+					{{ with .buyin }}
+						{{ if eq "freeroll" .}}
+							{{ $buyin = printf "<span class='badge badge-secondary'>freeroll</span>" }}
+						{{ else }}
+							{{ $buyin = printf "<span class='badge badge-secondary'>$%s</span>" ( lang.NumFmt 0 (int .) "- , ." ) }}
+						{{ end }}
+					{{ end }}
+					{{ with .variante }}{{ $variante = printf "<span class='badge badge-secondary'>%s</span>" . }}{{ end }}
+
+					{{ $d1 := printf "%s (%s) %s %s" .description .date $casino $ville }}
+					{{ $d2 := printf "%s %s %s" $variante $sixmax $buyin }}
+					{{ $d3 := printf "%s %s" $vo $source }}
+
 					<a href="{{.url}}"
 						data-largesrc="{{.image}}"
 						data-title="{{.saison}} / {{ .episode }}"
-						data-description="{{ .description }} ({{ .date }}) {{ with .casino }}- {{ . }}{{ end }} {{ with .ville }}- {{ . }}{{ end }}"
-						data-buttontext="{{.buttontext}}">
+						data-description="{{ $d1 }}<br>{{ $d2 }}<br>{{ $d3 }}"
+						data-buttontext="{{ .buttontext }}">
 
 						<img src="{{.thumb}}" alt="{{.alt}}" width="250" height="250"/>
 					</a>
