@@ -63,6 +63,9 @@ notAlternative = true
    # Preview container button text
    buttontext = "Charger la vidéo"
 
+   # Message de modération
+   alertDownload = "La bande passante de téléchargement des vidéos étant limitée, **merci de faire attention à ne charger que ce que vous regardez réellement**."
+
    # Footer text
    footertext = "Vidéos proposées par Holalahola - Web site créé par Divinerites"
 
