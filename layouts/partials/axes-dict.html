@@ -9,6 +9,8 @@
 {{- $variantes  := dict }}
 {{- $casinos  := dict }}
 {{- $villes   := dict }}
+{{- $missing   := dict }}
+
 
 <!-- Maj des dict "types" par axe [sans totaux] -->
 {{- range $.Site.Data.items.items }}
@@ -30,5 +32,11 @@
 	{{- $casinos  = partial "counter-axe-dict" (dict "type" .casino  "types" $casinos) }}
 {{- end }}
 
-{{- $axes_dict := (dict "circuits" $circuits "dates" $dates "saisons" $saisons "variantes" $variantes "villes" $villes "casinos" $casinos )}}
+<!-- +1 au nombre actuel de videos avec des tags absents PAR SAISON -->
+{{- range $.Site.Data.items.items }}
+	{{- $missing  = partial "counter-axe-dict-missing" (dict "type" .saison  "types" $saisons) }}
+{{- end }}
+
+
+{{- $axes_dict := (dict "circuits" $circuits "dates" $dates "saisons" $saisons "variantes" $variantes "villes" $villes "casinos" $casinos "missing" $missing )}}
 {{ return $axes_dict }}

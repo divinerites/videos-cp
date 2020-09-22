@@ -1,0 +1,33 @@
+<!--
+	Affiche les tags manquants pour chaque vidéo indiviuelle
+	Paramètre : (dict context $ "type" "circuit" "types" $circuits "style" "success")
+-->
+{{- $type  := .type }}
+{{- $types := .types }}
+{{- $style := .style }}
+
+{{- range $k, $i := $types }}
+	<!-- Show videos for this specific circuit -->
+	<a id="{{ $k }}"></a>
+	<div class="main">
+		<h2 class="zvideo alert alert-{{ $style }}">
+			{{ $type | humanize }} : {{ $k }} <span class="badge badge-pill badge-light badge-{{ $style }}">{{ $i }}</span>
+			<a href="#top" role="button" class="btn btn-{{ $style }} btn-sm float-right">&#x2191;Retour aux choix de catégories</a>
+		</h2>
+		<ul class="missing">
+			{{- range where $.context.Site.Data.items.items $type $k}}
+			<li>
+            {{.saison}} / {{ .episode }} :
+					{{ if not (isset . "ville") }}<span class='badge badge-danger'>ville</span>{{ end }}
+					{{ if not (isset . "casino") }}<span class='badge badge-danger'>casino</span>{{ end }}
+					{{ if not (isset . "sixmax") }}<span class='badge badge-danger'>sixmax</span>{{ end }}
+					{{ if not (isset . "source") }}<span class='badge badge-danger'>source</span>{{ end }}
+					{{ if not (isset . "vo") }}<span class='badge badge-danger'>vo</span>{{ end }}
+					{{ if not (isset . "buyin") }}<span class='badge badge-danger'>buyin</span>{{ end }}
+					{{ if not (isset . "variante") }}<span class='badge badge-danger'>variante</span>{{ end }}
+			</li>
+			{{- end }}
+		</ul>
+	</div>
+	<!-- End Video -->
+{{- end }}
