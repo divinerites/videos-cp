@@ -1,4 +1,4 @@
-{{ partialCached "meta_header.html" . }}
+{{ partial "meta_header.html" . }}
 
 <div class="container">
 
@@ -8,6 +8,8 @@
 
 	<!-- AFFICHAGE -->
 	<a id="top"></a>
+
+	{{ partial "alert-download" . }}
 
 	<!-- Affiche les tags -->
 	<div class="tags">
