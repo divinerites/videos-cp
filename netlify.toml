@@ -4,7 +4,7 @@ command = "hugo --minify"
 functions = "functions"
 
 [context.production.environment]
-HUGO_VERSION = "0.74.3"
+HUGO_VERSION = "0.75.1"
 HUGO_ENV = "production"
 RUBY_VERSION = "2.6.2"
 HUGO_ENABLEGITINFO = "true"
@@ -16,7 +16,7 @@ NODE_VERSION = "12.2.0"
 command = "hugo --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.74.3"
+HUGO_VERSION = "0.75.1"
 RUBY_VERSION = "2.6.2"
 HUGO_ENABLEGITINFO = "true"
 TZ = "Europe/Zurich"
@@ -25,7 +25,7 @@ TZ = "Europe/Zurich"
 command = "hugo -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.74.3"
+HUGO_VERSION = "0.75.1"
 RUBY_VERSION = "2.6.2"
 HUGO_ENABLEGITINFO = "true"
 TZ = "Europe/Zurich"
