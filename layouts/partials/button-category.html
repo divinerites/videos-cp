@@ -3,6 +3,7 @@
 	Paramètre : (dict "types" $circuits "style" "success")
 -->
 {{- $style := .style }}
+{{- $badge := .badge | default true }}
 <!-- Lien différent si Home/alltags -->
 {{ $root := ""}}
 {{ if .context.IsHome }}
@@ -10,6 +11,6 @@
 {{ end }}
 {{- range $k, $i := .types }}
 	<a href="{{ $root }}#{{ $k }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }}">
-		{{ $k }} <span class="badge badge-light">{{ $i }}</span>
+		{{ $k }} {{ if $badge }}<span class="badge badge-light">{{ $i }}</span>{{ end }}
 	</a>
 {{- end }}

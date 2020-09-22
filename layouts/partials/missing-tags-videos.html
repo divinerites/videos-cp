@@ -2,7 +2,7 @@
 
    <!-- Initialise les divers dictionnaires des axes POUR MISSING-->
 {{ $dict_tags := partial "axes-dict" . }}
-{{- $saisons 	:= index $dict_tags "missing" }}
+{{- $saisons 	:= index $dict_tags "saisons" }}
 
 <!-- AFFICHAGE -->
 <a id="top"></a>
@@ -10,7 +10,7 @@
 <!-- Affiche les tags -->
 <div class="tags">
    <h2>{{ .Page.Description }}</h2>
-   {{- partial "button-category" (dict "context" . "types" $saisons   "style" "warning"   "root" "saisons") }}
+   {{- partial "button-category" (dict "context" .  "types" $saisons  "style" "warning"  "root" "saisons"  "badge" false ) }}
 </div>
 
 <!-- Missing Tags -->
