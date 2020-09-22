@@ -1,28 +1,5 @@
 {{ partialCached "meta_header.html" . }}
 
-<div class="container">
-
-	<!-- Initialise les divers dictionnaires des axes -->
-	{{ $dict_tags := partial "axes-dict" . }}
-	{{- $circuits 	:= index $dict_tags "circuits" }}
-	{{- $dates 		:= index $dict_tags "dates" }}
-	{{- $saisons 	:= index $dict_tags "saisons" }}
-	{{- $villes 	:= index $dict_tags "villes" }}
-	{{- $casinos 	:= index $dict_tags "casinos" }}
-
-	<!-- AFFICHAGE -->
-	<a id="top"></a>
-
-	<!-- Affiche les tags -->
-	<div class="tags">
-		<h2>Catégories de vidéos</h2>
-		{{- partial "button-category" (dict "types" $circuits "style" "success"   "root" "circuits") }}
-		{{- partial "button-category" (dict "types" $dates    "style" "info" 	  "root" "dates") }}
-		{{- partial "button-category" (dict "types" $saisons  "style" "warning"	  "root" "saisons") }}
-		{{- partial "button-category" (dict "types" $villes   "style" "danger"	  "root" "villes") }}
-		{{- partial "button-category" (dict "types" $casinos  "style" "secondary" "root" "casinos") }}
-	</div>
-
-</div>
+{{ partial "all-tags-videos" . }}
 
 {{- partialCached "meta_footer.html" . }}
