@@ -1,3 +1,6 @@
+#
+# PPT Saison 1
+#
 [[items]]
 saison = "PPT Saison 1"
 episode = "Etape 1 - Ep 1"
@@ -185,8 +188,9 @@ image = "/images/full/ppt.png"
 thumb = "/images/thumbs/ppt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?hf6fydtynywefvj6wg78"
-
-
+#
+# PPT Saison 3
+#
 [[items]]
 saison = "PPT Saison 3"
 episode = "Episode 1 - Heads-Up"
@@ -288,8 +292,9 @@ image = "/images/full/ppt.png"
 thumb = "/images/thumbs/ppt.png"
 alt = "Hugrid Theme"
 url = "https://1fichier.com/?d79zt8aunppgn2iat53a"
-
-
+#
+# WPT Saison 8
+#
 [[items]]
 saison = "WPT Saison 08"
 episode = "Ep 3 - part 2"
