@@ -3,7 +3,7 @@
 	(dict "type" .circuit "types" $circuits)
 -->
 {{- $types := .types }}
-{{- if not .type }}
+{{- if not (isset . .type) }}
 	{{- $count := index $types .type }}
 	{{- $count := add $count 1 }}
 	{{- $temp  := dict .type $count }}

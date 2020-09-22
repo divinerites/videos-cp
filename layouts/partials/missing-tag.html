@@ -16,16 +16,19 @@
 		</h2>
 		<ul class="missing">
 			{{- range where $.context.Site.Data.items.items $type $k}}
-			<li>
-            {{.saison}} / {{ .episode }} :
-					{{ if not (isset . "ville") }}<span class='badge badge-danger'>ville</span>{{ end }}
-					{{ if not (isset . "casino") }}<span class='badge badge-danger'>casino</span>{{ end }}
-					{{ if not (isset . "sixmax") }}<span class='badge badge-danger'>sixmax</span>{{ end }}
-					{{ if not (isset . "source") }}<span class='badge badge-danger'>source</span>{{ end }}
-					{{ if not (isset . "vo") }}<span class='badge badge-danger'>vo</span>{{ end }}
-					{{ if not (isset . "buyin") }}<span class='badge badge-danger'>buyin</span>{{ end }}
-					{{ if not (isset . "variante") }}<span class='badge badge-danger'>variante</span>{{ end }}
-			</li>
+				{{- if or (not (isset . "ville")) (not (isset . "casino")) (not (isset . "sixmax")) (not (isset . "source")) (not (isset . "vo")) (not (isset . "buyin")) (not (isset . "variante")) }}
+					<li>
+						{{.saison}} / {{ .episode }} :
+							{{ if not (isset . "ville") }}<span class='badge badge-danger'>ville</span>{{ end }}
+							{{ if not (isset . "casino") }}<span class='badge badge-danger'>casino</span>{{ end }}
+							{{ if not (isset . "sixmax") }}<span class='badge badge-danger'>sixmax</span>{{ end }}
+							{{ if not (isset . "source") }}<span class='badge badge-danger'>source</span>{{ end }}
+							{{ if not (isset . "vo") }}<span class='badge badge-danger'>vo</span>{{ end }}
+							{{ if not (isset . "buyin") }}<span class='badge badge-danger'>buyin</span>{{ end }}
+							{{ if not (isset . "variante") }}<span class='badge badge-danger'>variante</span>{{ end }}
+					</li>
+				{{- else }}
+				{{- end }}
 			{{- end }}
 		</ul>
 	</div>
