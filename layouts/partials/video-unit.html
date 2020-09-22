@@ -5,13 +5,14 @@
 {{- $type  := .type }}
 {{- $types := .types }}
 {{- $style := .style }}
+{{- $badge := .badge | default true }}
 
 {{- range $k, $i := $types }}
 	<!-- Show videos for this specific circuit -->
 	<a id="{{ $k }}"></a>
 	<div class="main">
 		<h2 class="zvideo alert alert-{{ $style }}">
-			{{ $type | humanize }} : {{ $k }} <span class="badge badge-pill badge-light badge-{{ $style }}">{{ $i }}</span>
+			{{ $type | humanize }} : {{ $k }} {{ if $badge }}<span class="badge badge-pill badge-light badge-{{ $style }}">{{ $i }}</span>{{ end}}
 			<a href="#top" role="button" class="btn btn-{{ $style }} btn-sm float-right">&#x2191;Retour aux choix de catégories</a>
 		</h2>
 		<ul id="og-grid" class="og-grid">
