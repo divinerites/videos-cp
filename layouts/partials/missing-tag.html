@@ -16,6 +16,7 @@
 			<a href="#top" role="button" class="btn btn-{{ $style }} btn-sm float-right">&#x2191;Retour aux choix de catégories</a>
 		</h2>
 		<ul class="missing">
+			{{- $typeOkTags := true }}
 			{{- range where $.context.Site.Data.items.items $type $k}}
 				{{- if or (not (isset . "ville")) (not (isset . "casino")) (not (isset . "sixmax")) (not (isset . "source")) (not (isset . "vo")) (not (isset . "buyin")) (not (isset . "variante")) }}
 					<li>
@@ -28,8 +29,22 @@
 							{{ if not (isset . "buyin") }}<span class='badge badge-danger'>buyin</span>{{ end }}
 							{{ if not (isset . "variante") }}<span class='badge badge-danger'>variante</span>{{ end }}
 					</li>
-				{{- else }}
+					{{- $typeOkTags = false }}
 				{{- end }}
+			{{- end }}
+
+			<!-- Si la saison a tous ses tags -->
+			{{- if $typeOkTags }}
+				<li>
+					Tags OK pour tous les épisodes :
+					<span class='badge badge-success'>ville</span>
+					<span class='badge badge-success'>casino</span>
+					<span class='badge badge-success'>sixmax</span>
+					<span class='badge badge-success'>source</span>
+					<span class='badge badge-success'>vo</span>
+					<span class='badge badge-success'>buyin</span>
+					<span class='badge badge-success'>variante</span>
+				</li>
 			{{- end }}
 		</ul>
 	</div>
