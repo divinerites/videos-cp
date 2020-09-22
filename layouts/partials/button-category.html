@@ -4,13 +4,33 @@
 -->
 {{- $style := .style }}
 {{- $badge := .badge | default true }}
+{{- $badgeglobal := $badge }}
+{{- $tagstate := .tagstate | default false }}
+
 <!-- Lien différent si Home/alltags -->
 {{ $root := ""}}
 {{ if .context.IsHome }}
 	{{ $root = .root }}
 {{ end }}
 {{- range $k, $i := .types }}
+
+	<!-- Calcule l'état des tags pour le type Saison -->
+	{{ if $tagstate }}
+		{{ $style = "success" }}
+		{{ $i = 0 }}
+		{{- range where $.context.Site.Data.items.items "saison" $k}}
+			{{- if or (not (isset . "ville")) (not (isset . "casino")) (not (isset . "sixmax")) (not (isset . "source")) (not (isset . "vo")) (not (isset . "buyin")) (not (isset . "variante")) }}
+				{{ $style = "danger" }}
+				{{ $i = add $i 1 }}
+				{{ $badge = true }}
+			{{- end }}
+		{{- end }}
+	{{ end }}
+
+	<!-- Affiche le bouton -->
 	<a href="{{ $root }}#{{ $k }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }}">
 		{{ $k }} {{ if $badge }}<span class="badge badge-light">{{ $i }}</span>{{ end }}
 	</a>
+
+	{{ $badge = $badgeglobal }}
 {{- end }}

@@ -10,7 +10,7 @@
 <!-- Affiche les tags -->
 <div class="tags">
    <h2>{{ .Page.Description }}</h2>
-   {{- partial "button-category" (dict "context" .  "types" $saisons  "style" "warning"  "root" "saisons"  "badge" false ) }}
+   {{- partial "button-category" (dict "context" .  "types" $saisons  "style" "warning"  "root" "saisons"  "badge" false "tagstate" true) }}
 </div>
 
 <!-- Missing Tags -->
