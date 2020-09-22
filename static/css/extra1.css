@@ -33,3 +33,9 @@ body {
 .og-details h3 {
 	font-size: 30px;
 }
+
+.border {
+   border: 2px solid grey;
+   border-radius: 3px;
+   background: lightgrey;
+}
