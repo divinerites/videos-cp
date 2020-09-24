@@ -1,0 +1,26 @@
+DirectoryPath: "public"
+EnforceHTTPS: false
+LogLevel: 1
+IgnoreURLs:
+- "facebook.com"
+- "tweeter.com"
+- "instagram.com"
+- "googleapis.com"
+- "www.valdherens.ch"
+- "www.lagouille.com"
+IgnoreDirs:
+- "lib"
+- "revealjs"
+CacheExpires: "24h"
+CheckExternal: false
+IgnoreAltMissing: true
+CheckInternalHash: false
+CheckDoctype: false
+
+CheckFavicon: false
+
+CheckAnchors: true
+# IgnoreEmptyHref: true
+IgnoreInternalEmptyHash: true
+
+CheckMeta: true
