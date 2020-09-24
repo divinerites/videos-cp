@@ -1042,10 +1042,7 @@ date = "2011"
 ville = "Paris"
 casino = "Aviation Club de France"
 sixmax = false
-vo = false
-buyin = "freeroll"
 variante = "NLHE"
-source = "DivxPoker"
 url = "https://1fichier.com/?hu7xaf5dsbumnrnxb3lu"
 [[items]]
 saison = "WPT National 2011"
@@ -1056,6 +1053,7 @@ date = "2011"
 ville = "Paris"
 casino = "Aviation Club de France"
 sixmax = false
+variante = "NLHE"
 url = "https://1fichier.com/?kdpv99tkdgkoteepvkyr"
 [[items]]
 saison = "WPT National 2011"
@@ -1066,6 +1064,7 @@ date = "2011"
 ville = "Paris"
 casino = "Aviation Club de France"
 sixmax = false
+variante = "NLHE"
 url = "https://1fichier.com/?t82s9szgjp7aall44eu1"
 [[items]]
 saison = "WPT National 2011"
@@ -1076,6 +1075,7 @@ date = "2011"
 ville = "Paris"
 casino = "Aviation Club de France"
 sixmax = false
+variante = "NLHE"
 url = "https://1fichier.com/?8w0e3r6qim6yqz55lbi5"
 [[items]]
 saison = "WPT National 2011"
@@ -1086,6 +1086,7 @@ date = "2011"
 ville = "Paris"
 casino = "Aviation Club de France"
 sixmax = false
+variante = "NLHE"
 url = "https://1fichier.com/?3arm07c12pzy4v0dc5ad"
 [[items]]
 saison = "WPT National 2011"
@@ -1096,6 +1097,7 @@ date = "2011"
 ville = "Paris"
 casino = "Aviation Club de France"
 sixmax = false
+variante = "NLHE"
 url = "https://1fichier.com/?xo3ziebj42eywlpg3qbx"
 #
 # Aussie Millions 2007
