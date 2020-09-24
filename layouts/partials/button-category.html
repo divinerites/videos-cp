@@ -9,8 +9,10 @@
 
 <!-- Lien différent si Home/alltags -->
 {{ $root := ""}}
+{{ $trailing := ""}}
 {{ if .context.IsHome }}
 	{{ $root = .root }}
+	{{ $trailing = "/"}}
 {{ end }}
 {{- range $k, $i := .types }}
 
@@ -28,7 +30,8 @@
 	{{ end }}
 
 	<!-- Affiche le bouton -->
-	<a href="{{ $root }}#{{ $k }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }}">
+	{{- $href := printf "%s%s#%s" $root $trailing $k  }}
+	<a href="{{ $href }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }}">
 		{{ $k }} {{ if $badge }}<span class="badge badge-light">{{ $i }}</span>{{ end }}
 	</a>
 
