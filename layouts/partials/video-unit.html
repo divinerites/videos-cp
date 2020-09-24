@@ -50,7 +50,12 @@
 						data-description="{{ $d1 }}<br>{{ $d2 }}<br>{{ $d3 }}"
 						data-buttontext="{{ .buttontext }}">
 
-						<img src="{{.thumb}}" alt="{{.alt}}" width="250" height="250"/>
+						<!-- Image automatique selon .circuit TODO passer en Assets -->
+						{{ $thumb := printf "/images/thumbs/%s.png" ( .circuit | lower )}}
+						{{ $thumbfile := printf "/static%s" $thumb }}
+						{{ if not (fileExists $thumbfile ) }}{{ $thumb = "/images/thumbs/5.png" }}{{ end}}
+						<img src="{{ $thumb }}" alt="{{.alt}}" width="250" height="250"/>
+
 					</a>
 					<p>
 						<strong>{{ .saison }}</strong>
