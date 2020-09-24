@@ -45,6 +45,7 @@
 					{{ $d3 := printf "%s %s" $vo $source }}
 
 					<!-- Image automatique selon .circuit TODO passer en Assets -->
+					<!-- TODO Sortir le test d'existance du fichier de la boucle. Utiliser Scratch + .SetInMap ? -->
 					{{ $thumb := printf "/images/thumbs/%s.png" ( .circuit | lower )}}
 					{{ $thumbfile := printf "/static%s" $thumb }}
 					{{ if not (fileExists $thumbfile ) }}{{ $thumb = "/images/thumbs/5.png" }}{{ end}}
