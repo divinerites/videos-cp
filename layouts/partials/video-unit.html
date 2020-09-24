@@ -44,18 +44,22 @@
 					{{ $d2 := printf "%s %s %s" $variante $sixmax $buyin }}
 					{{ $d3 := printf "%s %s" $vo $source }}
 
+					<!-- Image automatique selon .circuit TODO passer en Assets -->
+					{{ $thumb := printf "/images/thumbs/%s.png" ( .circuit | lower )}}
+					{{ $thumbfile := printf "/static%s" $thumb }}
+					{{ if not (fileExists $thumbfile ) }}{{ $thumb = "/images/thumbs/5.png" }}{{ end}}
+
+					{{ $full := printf "/images/full/%s.png" ( .circuit | lower )}}
+					{{ $fullfile := printf "/static%s" $full }}
+					{{ if not (fileExists $fullfile ) }}{{ $full = "/images/full/5.png" }}{{ end}}
+
 					<a href="{{.url}}"
-						data-largesrc="{{.image}}"
+						data-largesrc="{{ $full }}"
 						data-title="{{.saison}} / {{ .episode }}"
 						data-description="{{ $d1 }}<br>{{ $d2 }}<br>{{ $d3 }}"
 						data-buttontext="{{ .buttontext }}">
 
-						<!-- Image automatique selon .circuit TODO passer en Assets -->
-						{{ $thumb := printf "/images/thumbs/%s.png" ( .circuit | lower )}}
-						{{ $thumbfile := printf "/static%s" $thumb }}
-						{{ if not (fileExists $thumbfile ) }}{{ $thumb = "/images/thumbs/5.png" }}{{ end}}
 						<img src="{{ $thumb }}" alt="{{.alt}}" width="250" height="250"/>
-
 					</a>
 					<p>
 						<strong>{{ .saison }}</strong>
