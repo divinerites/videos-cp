@@ -12,7 +12,11 @@
 		{{ $currentPage := . }}
 
 		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="/">{{ site.Params.titleMenu }}</a>
+			{{- if .IsHome }}
+				<a class="navbar-brand nav-link active border" href="/">{{ site.Params.titleMenu }}</a>
+			{{- else }}
+				<a class="navbar-brand nav-link" href="/">{{ site.Params.titleMenu }}</a>
+			{{- end }}
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
