@@ -1,0 +1,13 @@
+<p class="text-center">
+  <a class="btn btn-info" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Voir les instructions pour contribuer très facilement ...
+  </a>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="container card card-body">
+    {{ $headless := .Site.GetPage "/contribute" }}
+    {{ with $headless }}
+      {{ .Content }}
+    {{ end }}
+  </div>
+</div>
