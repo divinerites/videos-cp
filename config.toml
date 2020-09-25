@@ -16,6 +16,9 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
   writeStats = true
 
 [module]
+   proxy = "direct"
+   [module.hugoVersion]
+      min = "0.75.1"
    [[module.imports]]
       path = "github.com/divinerites/plausible-hugo"
    #[[module.imports]]
@@ -42,6 +45,11 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
    [[module.mounts]]
       source = "themes/hugrid-2020/static/js"
       target = "assets/js"
+
+[caches]
+  [caches.modules]
+    dir = ":cacheDir/modules"
+    maxAge = 0 # "1m"
 
 # Pour générer le _redirects pour Netlify avec /layout/index.redir
 [outputs]
