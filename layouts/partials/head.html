@@ -11,7 +11,15 @@
 {{ hugo.Generator }}
 
 <!-- Font Awsome -->
-<link href="/css/all.css" rel="stylesheet">
+{{- $css := resources.Get "/css/all.css" }}
+{{- if hugo.IsProduction }}
+	<!-- Utilise PurgeCSS -->
+	{{- if site.Params.purgecss }}
+		{{- $css = $css | resources.PostCSS }}
+	{{- end }}
+	{{- $css = $css | minify | fingerprint "sha384" }}
+{{- end }}
+<link href="{{ $css.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $css.Data.Integrity }}"{{ end }} rel="stylesheet" type="text/css">
 
 <!-- Assets CSS -->
 {{- $css1 := resources.Get "css/default.css"}}
@@ -22,6 +30,10 @@
 	{{- $css = slice $css $cssX | resources.Concat "css/style.css" }}
 {{ end }}
 {{- if hugo.IsProduction }}
+	<!-- Utilise PurgeCSS -->
+	{{- if site.Params.purgecss }}
+		{{- $css = $css | resources.PostCSS (dict "config" "./postcss.config.js") }}
+	{{- end }}
    {{- $css = $css | minify | fingerprint "sha384" }}
 {{- end }}
 <link href="{{ $css.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $css.Data.Integrity }}"{{ end }} rel="stylesheet" type="text/css">

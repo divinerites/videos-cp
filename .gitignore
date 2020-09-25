@@ -3,3 +3,5 @@
 !/public/.gitkeep
 /tmp/*
 /tmp
+
+node_modules

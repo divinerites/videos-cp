@@ -1,0 +1,23 @@
+{
+ "comments": {
+  "dependencies": {},
+  "devDependencies": {
+   "@tailwindcss/typography": "github.com/bep/hugo-starter-tailwind-basic",
+   "autoprefixer": "github.com/bep/hugo-starter-tailwind-basic",
+   "postcss-cli": "github.com/bep/hugo-starter-tailwind-basic",
+   "postcss-purgecss": "github.com/bep/hugo-starter-tailwind-basic",
+   "tailwindcss": "github.com/bep/hugo-starter-tailwind-basic"
+  }
+ },
+ "dependencies": {},
+ "devDependencies": {
+  "@tailwindcss/typography": "^0.2.0",
+  "autoprefixer": "~9.7.6",
+  "postcss": "^8.0.9",
+  "postcss-cli": "^8.0.0",
+  "postcss-purgecss": "^2.0.3",
+  "tailwindcss": "^1.8.10"
+ },
+ "name": "videos-clubpoker",
+ "version": "0.1.0"
+}

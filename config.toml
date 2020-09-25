@@ -13,7 +13,7 @@ publishdir  = "public"
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 
 [build]
-  writeStats = false
+  writeStats = true
 
 [module]
    [[module.imports]]
@@ -26,6 +26,10 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
       path = "github.com/divinerites/divinerites-images-asset"
    [[module.imports]]
       path = "github.com/gohugoio/hugo-mod-jslibs/instantpage"
+   [[module.imports]]
+      path = "github.com/bep/hugo-starter-tailwind-basic"
+      # hugo mod npm pack
+      # npm install
    [[module.mounts]]
       source = "static/images"
       target = "assets/images"
@@ -56,6 +60,9 @@ isPlainText = true
 notAlternative = true
 
 [params]
+   # Tailwind + PurgeCSS
+   purgecss = true
+
    # Meta
    title = "CP Vidéos : catalogue de <i class='fas fa-film'></i> vidéos de Poker live"
    subtitle = "Vidéos présentées via Club Poker"
