@@ -1,0 +1,8 @@
+<!-- A utiliser si on fait du Lazyload des images -->
+{{- $selector := site.Params.global.lazyload.label }}
+<script>
+   var lazyLoadInstance = new LazyLoad({
+     elements_selector: ".{{ $selector }}",
+     cancel_on_exit: true
+   });
+ </script>
