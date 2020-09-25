@@ -4,7 +4,10 @@
 	<div class="container">
 		<p class="zfooter">
 			{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}<br>
-			{{- with site.Params.footerpostcp }}{{ . | markdownify }}&nbsp;<img src="/images/logo-cp.png" width="15" height="15">{{- end }}<br>
+			{{- with site.Params.footerpostcp }}{{ . | markdownify }}
+				{{- partial "image_asset.html" (dict "context" . "path" "/images/logo-cp.png" "size" "15x15" "action" "Fit" "title" "Logo CP" ) }}
+			{{- end }}
+			<br>
 			Créé avec <a href="https://www.gohugo.io" title="link">gohugo.io</a> v{{ hugo.Version }} ({{ dateFormat $_fdate now }})
 		</p>
 		<p class="zfooter">
