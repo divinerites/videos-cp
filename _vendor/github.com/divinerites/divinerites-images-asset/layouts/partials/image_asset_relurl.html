@@ -1,0 +1,51 @@
+<!--
+   Gestion de l'affichage des images (asset)
+-->
+<!-- Traite les paramètres -->
+{{- $size := .size -}}
+{{- $path := .path -}}
+{{- $action := .action | default "Fill" -}}
+{{- $filter := .filter | default "" -}}
+<!-- En cas de portfolio -->
+{{- $portfolio := .pf | default false -}}
+{{- $portfolio_size := .pf_size | default "800x" -}}
+{{- $highres := .highres | default false -}}
+<!-- Misc -->
+{{- $title := .title | default "Image" -}} <!-- "false" pour aucun titre -->
+
+<!-- récupère l'image -->
+{{- $img_original := resources.Get $path  -}}
+{{- $img_small  := $img_original -}}
+
+<!-- Exécutio des actions et tailles images -->
+{{- if eq $action "Fill" -}}
+   {{- $img_small  = $img_original.Fill $size -}}
+{{- else if (eq $action "Fit") -}}
+   {{- $img_small = $img_original.Fit $size -}}
+{{- else if (eq $action "Resize") -}}
+   {{- $img_small = $img_original.Resize $size -}}
+{{- end -}}
+<!-- Manage filters -->
+{{- with $filter -}}
+   {{- $img_small  = $img_small.Filter . -}}
+{{ end }}
+
+<!-- En cas de portfolio -->
+{{- $img_detail := ""}}
+{{ if $portfolio }}
+   {{- $img_detail = $img_original.Resize $portfolio_size -}}
+   {{- with $filter -}}
+      {{- $img_detail = $img_detail.Filter . -}}
+   {{ end }}
+{{ end }}
+
+<!-- Retour de l'URL souhaitée -->
+{{ $img_return := $img_small }}
+{{ if $portfolio }}
+   {{ $img_return = $img_detail }}
+{{ end }}
+{{ if $highres }}
+   {{ $img_return = $img_original }}
+{{ end }}
+
+{{ return $img_return.RelPermalink }}

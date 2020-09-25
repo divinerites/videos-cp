@@ -33,6 +33,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
       path = "github.com/bep/hugo-starter-tailwind-basic"
       # hugo mod npm pack
       # npm install
+      # pb with 0.50 => npm install --save-dev postcss@^8.0.3
    [[module.mounts]]
       source = "static/images"
       target = "assets/images"
