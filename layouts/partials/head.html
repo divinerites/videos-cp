@@ -32,7 +32,7 @@
 {{- if hugo.IsProduction }}
 	<!-- Utilise PurgeCSS -->
 	{{- if site.Params.purgecss }}
-		{{- $css = $css | resources.PostCSS (dict "config" "./postcss.config.js") }}
+		{{- $css = $css | resources.PostCSS }}
 	{{- end }}
    {{- $css = $css | minify | fingerprint "sha384" }}
 {{- end }}
