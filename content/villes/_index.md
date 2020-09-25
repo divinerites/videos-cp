@@ -2,7 +2,7 @@
 title: "Villes"
 date: 2020-09-19T15:53:27+06:00
 draft: false
-description : "Tous les villes des vidéos poker"
+description : "Les vidéos par ville"
 menu :
    main :
       pre : "<i class='fas fa-compass'></i>"

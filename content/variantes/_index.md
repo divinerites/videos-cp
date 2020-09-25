@@ -2,7 +2,7 @@
 title: "Variantes"
 date: 2020-09-19T15:53:27+06:00
 draft: false
-description : "Toutes les variantes des vidéos poker"
+description : "Les vidéos par variante"
 menu :
    main :
       pre : "<i class='fas fa-hat-cowboy'></i>"
