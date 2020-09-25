@@ -67,14 +67,14 @@ notAlternative = true
    alertDownload = """
    La bande passante de téléchargement des vidéos étant limitée,
    **merci de faire attention à ne charger que ce que vous regardez réellement**
-   et ainsi permettre que ce service puisse continuer à être offert à la communauté du CP ![cp](/images/logo-cp.png =100x20)."""
-
+   et ainsi permettre que ce service puisse continuer à être offert à la communauté du CP."""
    alertContribute = """
    **Vous pouvez contribuer** en proposant des corrections d'erreurs, d'oublis,
    voire des compléments via le lien `Contribuer` en haut à droite."""
 
    # Footer text
    footertext = "Vidéos préservées et proposées par Holalahola - Web site par Divinerites"
+   footerpostcp = "[Thread original](https://www.clubpoker.net/forum-poker/topic/51308-divx-poker/) sur Club Poker"
 
    # Dates
    dateFormat = "2 Jan 2006"

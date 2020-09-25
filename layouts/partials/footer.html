@@ -3,8 +3,9 @@
 	<hr>
 	<div class="container">
 		<p class="zfooter">
-		{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}<br>
-		Créé avec <a href="https://www.gohugo.io" title="link">gohugo.io</a> v{{ hugo.Version }} ({{ dateFormat $_fdate now }})
+			{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}<br>
+			{{- with site.Params.footerpostcp }}{{ . | markdownify }}&nbsp;<img src="/images/logo-cp.png" width="15" height="15">{{- end }}<br>
+			Créé avec <a href="https://www.gohugo.io" title="link">gohugo.io</a> v{{ hugo.Version }} ({{ dateFormat $_fdate now }})
 		</p>
 		<p class="zfooter">
 			Ce site respecte le RGPD, le CCPA.<br>
