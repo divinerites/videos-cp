@@ -26,12 +26,5 @@
 {{- end }}
 <link href="{{ $css.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $css.Data.Integrity }}"{{ end }} rel="stylesheet" type="text/css">
 
-<!-- Scripts -->
-{{- $js := resources.Get "js/modernizr.custom.js"}}
-{{- if hugo.IsProduction }}
-	{{- $js = $js | minify | fingerprint "sha384" }}
-{{- end }}
-<script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }} defer ></script>
-
 <!-- Gestion du lazyloading des images -->
 {{- partial "header_lazyload.html" . }}

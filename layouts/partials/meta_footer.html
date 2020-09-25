@@ -1,5 +1,11 @@
 		{{- partial "footer.html" . }}
 
+		{{- $js := resources.Get "js/modernizr.custom.js"}}
+		{{- if hugo.IsProduction }}
+			{{- $js = $js | minify | fingerprint "sha384" }}
+		{{- end }}
+		<script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }} ></script>
+
 		{{- partial "scripts.html" . }}
 
 		<!-- Pour Images avec/sans LazyLoading -->
