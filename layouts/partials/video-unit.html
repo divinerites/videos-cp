@@ -50,9 +50,10 @@
 					{{- $fullfile := printf "/static%s" $full }}
 					{{- if not (fileExists $fullfile ) }}{{ $full = "/images/5.png" }}{{ end}}
 					{{- $path := $full }}
+
 					<!-- Image Full -->
 					{{- $title := printf "%s / %s" .saison .episode }}
-					{{- $full_url := partial "image_asset_relurl.html" (dict "context" . "path" $path "size" "400x400" "action" "Fill" "title" $title ) }}
+					{{- $full_url := partial "image_asset_relurl.html" (dict "context" . "path" $path "size" "500x500" "action" "Fit" "title" $title ) }}
 					<!-- Afichage des infos de vidéo -->
 					<a href="{{.url}}"
 						data-largesrc="{{ $full_url }}"
@@ -61,7 +62,7 @@
 						data-buttontext="{{ .buttontext }}">
 						<!-- Image Thumb -->
 						{{- $title := printf "%s / %s" .saison .episode }}
-						{{- partial "image_asset.html" (dict "context" . "path" $path "size" "250x250" "action" "Fill" "title" $title ) }}
+						{{- partial "image_asset.html" (dict "context" . "path" $path "size" "250x250" "action" "Fit" "title" $title ) }}
 					</a>
 					<p>
 						<strong>{{ .saison }}</strong>
