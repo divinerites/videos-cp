@@ -44,23 +44,24 @@
 					{{ $d2 := printf "%s %s %s" $variante $sixmax $buyin }}
 					{{ $d3 := printf "%s %s" $vo $source }}
 
-					<!-- Image automatique selon .circuit TODO passer en Assets -->
+					<!-- Image automatique selon .circuit -->
 					<!-- TODO Sortir le test d'existance du fichier de la boucle. Utiliser Scratch + .SetInMap ? -->
-					{{ $thumb := printf "/images/thumbs/%s.png" ( .circuit | lower )}}
-					{{ $thumbfile := printf "/static%s" $thumb }}
-					{{ if not (fileExists $thumbfile ) }}{{ $thumb = "/images/thumbs/5.png" }}{{ end}}
-
-					{{ $full := printf "/images/full/%s.png" ( .circuit | lower )}}
-					{{ $fullfile := printf "/static%s" $full }}
-					{{ if not (fileExists $fullfile ) }}{{ $full = "/images/full/5.png" }}{{ end}}
-
+					{{- $full := printf "/images/%s.png" ( .circuit | lower )}}
+					{{- $fullfile := printf "/static%s" $full }}
+					{{- if not (fileExists $fullfile ) }}{{ $full = "/images/5.png" }}{{ end}}
+					{{- $path := $full }}
+					<!-- Image Full -->
+					{{- $title := printf "%s / %s" .saison .episode }}
+					{{- $full_url := partial "image_asset_relurl.html" (dict "context" . "path" $path "size" "400x400" "action" "Fill" "title" $title ) }}
+					<!-- Afichage des infos de vidéo -->
 					<a href="{{.url}}"
-						data-largesrc="{{ $full }}"
+						data-largesrc="{{ $full_url }}"
 						data-title="{{.saison}} / {{ .episode }}"
 						data-description="{{ $d1 }}<br>{{ $d2 }}<br>{{ $d3 }}"
 						data-buttontext="{{ .buttontext }}">
-
-						<img src="{{ $thumb }}" alt="{{.saison}} / {{ .episode }}" width="250" height="250"/>
+						<!-- Image Thumb -->
+						{{- $title := printf "%s / %s" .saison .episode }}
+						{{- partial "image_asset.html" (dict "context" . "path" $path "size" "250x250" "action" "Fill" "title" $title ) }}
 					</a>
 					<p>
 						<strong>{{ .saison }}</strong>

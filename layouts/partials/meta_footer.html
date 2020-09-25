@@ -2,6 +2,9 @@
 
 		{{- partial "scripts.html" . }}
 
+		<!-- Pour Images avec/sans LazyLoading -->
+		{{ partial "footer_lazyload.html" . }}
+
 		<!-- preload link hover -->
 		{{ partialCached "jslibs/instantpage/script-src.html" "-" }}
 

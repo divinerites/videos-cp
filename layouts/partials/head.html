@@ -32,3 +32,6 @@
 	{{- $js = $js | minify | fingerprint "sha384" }}
 {{- end }}
 <script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }} ></script>
+
+<!-- Gestion du lazyloading des images -->
+{{- partial "header_lazyload.html" . }}
