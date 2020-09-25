@@ -1,3 +1,7 @@
+github.com/divinerites/divinerites-images-asset v1.1.0 h1:nFp2eNSKnS5C/RReampW8Je7pWwlL9WauAwOsUtV3Gc=
+github.com/divinerites/divinerites-images-asset v1.1.0/go.mod h1:qdzs2WfBl/DNlqptyKbohNlNGjuwU51A+j9ixLN3Ymc=
+github.com/divinerites/divinerites-lazyload v1.1.0 h1:4B5ivzfvWEbEueyX+Idkiv62yE16hM/0qBjCER5dZx8=
+github.com/divinerites/divinerites-lazyload v1.1.0/go.mod h1:GYgjVB8I20tR2044CozV/epfrlbns9IHYfFut922I64=
 github.com/divinerites/plausible-hugo v1.6.0 h1:hd76kMMuzN4Qvj+6PVX8CgUJKS+BZjt+DnXTiIT2Kj8=
 github.com/divinerites/plausible-hugo v1.6.0/go.mod h1:cxr+YB3FUwbLon8KCs4pV4Ankbkq6lJxTQUpNb5KqPo=
 github.com/gohugoio/hugo-mod-jslibs v0.0.0-20200915093438-9efaf2acde76 h1:3E9ItW1KVxSjzEu84vakT1UboJ+YTE1OJygZQyPzxxY=

@@ -20,8 +20,12 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
       path = "github.com/divinerites/plausible-hugo"
    #[[module.imports]]
    #   path = "github.com/gohugoio/hugo-mod-bootstrap-scss-v4"
-  [[module.imports]]
-    path = "github.com/gohugoio/hugo-mod-jslibs/instantpage"
+   [[module.imports]]
+    path = "github.com/divinerites/divinerites-lazyload"
+   [[module.imports]]
+      path = "github.com/divinerites/divinerites-images-asset"
+   [[module.imports]]
+      path = "github.com/gohugoio/hugo-mod-jslibs/instantpage"
    [[module.mounts]]
       source = "static/images"
       target = "assets/images"
