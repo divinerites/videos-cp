@@ -47,10 +47,10 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
       source = "themes/hugrid-2020/static/js"
       target = "assets/js"
 
-[caches]
-  [caches.modules]
-    dir = ":cacheDir/modules"
-    maxAge = 0 # "1m"
+#[caches]
+#  [caches.modules]
+#    dir = ":cacheDir/modules"
+#    maxAge = 0 # "1m"
 
 # Pour générer le _redirects pour Netlify avec /layout/index.redir
 [outputs]
