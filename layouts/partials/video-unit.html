@@ -26,8 +26,8 @@
 					{{ $buyin := ""}}
 					{{ $variante := ""}}
 
-					{{ with .ville }}{{ $ville = printf " - %s" . }}{{ end }}
-					{{ with .casino }}{{ $casino = printf " - %s" . }}{{ end }}
+					{{ with .ville }}{{ $ville = printf "%s" . }}{{ end }}
+					{{ with .casino }}{{ $casino = printf "%s" . }}{{ end }}
 					{{ with .sixmax }}{{ $sixmax = "<span class='badge badge-secondary'>6max</span>" }}{{ end }}
 					{{ with .source }}{{ $source = printf "Source : %s" . }}{{ end }}
 					{{ with .vo }}{{ $vo = printf "<span class='badge badge-secondary'>V.O.</span>" }}{{ end }}
@@ -43,6 +43,9 @@
 					{{ $d1 := printf "%s (%s) %s %s" .description .date $casino $ville }}
 					{{ $d2 := printf "%s %s %s" $variante $sixmax $buyin }}
 					{{ $d3 := printf "%s %s" $vo $source }}
+					{{ $saison := printf "<span class='badge badge-secondary'>%s</span>" .saison }}
+					{{ $infotag := printf "%s %s %s %s" $vo $variante $buyin $sixmax }}
+
 
 					<!-- Image automatique selon .circuit -->
 					<!-- TODO Sortir le test d'existance du fichier de la boucle. Utiliser Scratch + .SetInMap ? -->
@@ -66,12 +69,14 @@
 						{{- partial "image_asset.html" (dict "context" . "path" $path "size" "250x250" "action" "Fit" "title" $title ) }}
 					</a>
 					<p>
-						<strong>{{ .saison }}</strong>
+						<span class="episode">
+							{{ .episode }}<br>
+							{{ $infotag | safeHTML }}
+							<span class="saison">{{ .saison }}</span>
+						</span>
 						<br>
-						<em>{{ .episode }}{{ if .vo }}&nbsp;<span class="badge badge-secondary">V.O.</span>{{ end }}</em>
+						<span class="casino">{{ $casino }}, {{ $ville }}</span>
 					</p>
-
-
 
 			</li>
 			{{- end }}

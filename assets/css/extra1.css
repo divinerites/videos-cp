@@ -1,5 +1,5 @@
 .og-grid li {
-   margin-bottom:50px;
+   margin-bottom:90px;
 }
 
 .tags {
@@ -69,7 +69,17 @@ body {
    color: grey;
 }
 
-.episode {
+.saison {
    font-style: italic;
+   font-size: 0.6rem;
+   color: grey;
+}
+.episode {
+   font-style: normal;
    font-size: 0.9rem;
+}
+.casino {
+   font-style: italic;
+   font-size: 0.8rem;
+   color: goldenrod;
 }
