@@ -15,7 +15,6 @@
       "h2",
       "h3",
       "h4",
-      "h5",
       "head",
       "header",
       "hr",
@@ -72,6 +71,7 @@
       "clearfix",
       "collapse",
       "container",
+      "date",
       "fa-calendar",
       "fa-check-circle",
       "fa-compass",
@@ -114,6 +114,7 @@
       "sr-only",
       "tags",
       "text-center",
+      "zalert",
       "zfooter",
       "zvideo"
     ],

@@ -41,7 +41,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
       source = "themes/hugrid-2020/static/css"
       target = "assets/css"
    [[module.mounts]]
-      source = "static/css"
+      source = "assets/css"
       target = "assets/css"
    [[module.mounts]]
       source = "themes/hugrid-2020/static/js"
@@ -73,7 +73,7 @@ notAlternative = true
    purgecss = true
 
    # Meta
-   title = "CP Vidéos : catalogue de <i class='fas fa-film'></i> vidéos de Poker live"
+   title = "Catalogue de <i class='fas fa-film'></i> vidéos de Poker live"
    subtitle = "Vidéos présentées via Club Poker"
    titleMenu = "CP Vidéos"
    author = "Divinerites"
