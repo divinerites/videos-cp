@@ -70,7 +70,7 @@ notAlternative = true
 
 [params]
    # Tailwind + PurgeCSS
-   purgecss = true
+   purgecss = false
 
    # Meta
    title = "Catalogue de <i class='fas fa-film'></i> vidéos de Poker live"
