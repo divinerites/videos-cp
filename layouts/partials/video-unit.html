@@ -47,6 +47,7 @@
 					<!-- Image automatique selon .circuit -->
 					<!-- TODO Sortir le test d'existance du fichier de la boucle. Utiliser Scratch + .SetInMap ? -->
 					{{- $full := printf "/images/%s.png" ( .circuit | lower )}}
+
 					{{- $fullfile := printf "/static%s" $full }}
 					{{- if not (fileExists $fullfile ) }}{{ $full = "/images/5.png" }}{{ end}}
 					{{- $path := $full }}

@@ -68,3 +68,8 @@ body {
    font-style: italic;
    color: grey;
 }
+
+.episode {
+   font-style: italic;
+   font-size: 0.9rem;
+}
