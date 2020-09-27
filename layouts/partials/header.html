@@ -8,10 +8,10 @@
 			<h1>
 				{{ with site.Params.title }}{{ . | safeHTML }}{{ end }}
 			</h1>
-			<h3>
+			<h5>
 				<span class="badge badge-secondary">{{ $count_videos }}</span>
 				<span>&nbsp;{{- with site.Params.footertext }}{{ . | markdownify }}{{- end }}</span>
-			</h3>
+			</h5>
 			<p><span class="date">maj au {{ dateFormat $_fdate now }}</span></p>
 		{{- else }}
 			<h1>{{ with .Params.description }}{{ . | safeHTML }}{{ end }}</h1>
