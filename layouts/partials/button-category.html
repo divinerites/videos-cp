@@ -31,7 +31,7 @@
 
 	<!-- Affiche le bouton -->
 	{{- $href := printf "%s%s#%s" $root $trailing $k  }}
-	<a href="{{ $href }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }}">
+	<a href="{{ $href }}" onclick="button()" role="button" class="btn btn-sm btn-{{ $style }} zbutton">
 		{{ $k }} {{ if $badge }}<span class="badge badge-light">{{ $i }}</span>{{ end }}
 	</a>
 

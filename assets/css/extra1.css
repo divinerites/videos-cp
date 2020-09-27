@@ -25,10 +25,12 @@
 .zfooter {
    font-size: 0.7rem;
 }
-
 .zalert {
    font-size: 14px;
    line-height: 16px;
+}
+.zbutton {
+   font-size: .75rem !important;
 }
 
 body {
