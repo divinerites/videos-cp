@@ -3,4 +3,4 @@
 # github.com/divinerites/divinerites-images-asset v1.1.0
 # github.com/gohugoio/hugo-mod-jslibs/instantpage v0.5.1
 # github.com/instantpage/instant.page v5.1.0+incompatible
-# github.com/bep/hugo-starter-tailwind-basic v0.6.0
+# github.com/bep/hugo-starter-tailwind-basic v0.6.1
