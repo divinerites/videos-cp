@@ -10,12 +10,14 @@
 
 {{ hugo.Generator }}
 
+{{- $isProd := hugo.IsProduction }}
+{{/* $isProd = true */}}
 <!-- Options pour PostCSS -->
 {{ $options := dict "inlineImports" true }}
 
 <!-- Font Awsome -->
 {{- $css := resources.Get "/css/all.css" }}
-{{- if hugo.IsProduction }}
+{{- if $isProd }}
 	<!-- Utilise PurgeCSS -->
 	{{- if site.Params.purgecss }}
 		{{- $css = $css | resources.PostCSS $options}}
@@ -34,7 +36,7 @@
 	{{- $cssX := resources.Get . }}
 	{{- $css = slice $css $cssX | resources.Concat "css/style.css" }}
 {{ end }}
-{{- if hugo.IsProduction }}
+{{- if $isProd }}
 	<!-- Utilise PurgeCSS -->
 	{{- if site.Params.purgecss }}
 		{{- $css = $css | resources.PostCSS $options }}
