@@ -10,18 +10,20 @@
 
 {{ hugo.Generator }}
 
+<!-- Options pour PostCSS -->
+{{ $options := dict "inlineImports" true }}
+
 <!-- Font Awsome -->
 {{- $css := resources.Get "/css/all.css" }}
 {{- if hugo.IsProduction }}
-		<!-- Utilise PurgeCSS -->
-		{{- if site.Params.purgecss }}
-			{{- $css = $css | resources.PostCSS }}
-			{{ else }}
-		{{- end }}
-		{{- $css = $css | minify | fingerprint "sha384" | resources.PostProcess }}
-	{{- else }}
-		{{- $css = $css | fingerprint }}
+	<!-- Utilise PurgeCSS -->
+	{{- if site.Params.purgecss }}
+		{{- $css = $css | resources.PostCSS $options}}
 	{{- end }}
+	{{- $css = $css | minify | fingerprint "sha384" | resources.PostProcess }}
+{{- else }}
+	{{- $css = $css | fingerprint }}
+{{- end }}
 <link href="{{ $css.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $css.Data.Integrity }}"{{ end }} rel="stylesheet" type="text/css">
 
 <!-- Assets CSS -->
@@ -33,13 +35,13 @@
 	{{- $css = slice $css $cssX | resources.Concat "css/style.css" }}
 {{ end }}
 {{- if hugo.IsProduction }}
-		<!-- Utilise PurgeCSS -->
-		{{- if site.Params.purgecss }}
-			{{- $css = $css | resources.PostCSS }}
-		{{- end }}
-		{{- $css = $css | minify | fingerprint "sha384" | resources.PostProcess }}
-	{{- else }}
-		{{- $css = $css | fingerprint }}
+	<!-- Utilise PurgeCSS -->
+	{{- if site.Params.purgecss }}
+		{{- $css = $css | resources.PostCSS $options }}
+	{{- end }}
+	{{- $css = $css | minify | fingerprint "sha384" | resources.PostProcess }}
+{{- else }}
+	{{- $css = $css | fingerprint }}
 {{- end }}
 <link href="{{ $css.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $css.Data.Integrity }}"{{ end }} rel="stylesheet" type="text/css">
 
