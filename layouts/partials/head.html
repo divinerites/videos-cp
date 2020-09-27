@@ -16,10 +16,12 @@
 		<!-- Utilise PurgeCSS -->
 		{{- if site.Params.purgecss }}
 			{{- $css = $css | resources.PostCSS }}
+			{{ else }}
 		{{- end }}
 		{{- $css = $css | minify | fingerprint "sha384" | resources.PostProcess }}
 	{{- else }}
-		{{- $css = $css | fingerprint }}{{- end }}
+		{{- $css = $css | fingerprint }}
+	{{- end }}
 <link href="{{ $css.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $css.Data.Integrity }}"{{ end }} rel="stylesheet" type="text/css">
 
 <!-- Assets CSS -->
