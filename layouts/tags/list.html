@@ -14,7 +14,7 @@
 	<!-- Affiche les tags -->
 	<div class="tags">
 		<h2>{{ .Params.title }}</h2>
-		{{- partialCached "button-category" (dict "types" $liste  "style" .Params.tag_style ) .Params.tag_style }}
+		{{- partial "button-category" (dict "types" $liste  "style" .Params.tag_style ) }}
 	</div>
 
 	<!-- Show all zones -->

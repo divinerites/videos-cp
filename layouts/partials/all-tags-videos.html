@@ -17,12 +17,12 @@
 <!-- Affiche les tags -->
 <div class="tags">
    <h2>Catégories de vidéos</h2>
-   {{- partialCached "button-category" (dict "context" . "types" $circuits  "style" "success"   "root" "circuits") "success" }}
-   {{- partialCached "button-category" (dict "context" . "types" $dates     "style" "info"      "root" "dates") "info"}}
-   {{- partialCached "button-category" (dict "context" . "types" $saisons   "style" "warning"   "root" "saisons") "warning"}}
-   {{- partialCached "button-category" (dict "context" . "types" $variantes "style" "primary"   "root" "variantes") "primary"}}
-   {{- partialCached "button-category" (dict "context" . "types" $villes    "style" "danger"    "root" "villes") "danger"}}
-   {{- partialCached "button-category" (dict "context" . "types" $casinos   "style" "secondary" "root" "casinos") "secondary"}}
+   {{- partial "button-category" (dict "context" . "types" $circuits  "style" "success"   "root" "circuits") }}
+   {{- partial "button-category" (dict "context" . "types" $dates     "style" "info"      "root" "dates") }}
+   {{- partial "button-category" (dict "context" . "types" $saisons   "style" "warning"   "root" "saisons") }}
+   {{- partial "button-category" (dict "context" . "types" $variantes "style" "primary"   "root" "variantes") }}
+   {{- partial "button-category" (dict "context" . "types" $villes    "style" "danger"    "root" "villes") }}
+   {{- partial "button-category" (dict "context" . "types" $casinos   "style" "secondary" "root" "casinos") }}
 </div>
 
 <!-- Show all zones si pas en page d'accueil -->
