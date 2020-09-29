@@ -14,11 +14,11 @@
 	<!-- Affiche les tags -->
 	<div class="tags">
 		<h2>{{ .Params.title }}</h2>
-		{{- partial "button-category" (dict "types" $liste  "style" .Params.tag_style ) }}
+		{{- partialCached "button-category" (dict "types" $liste  "style" .Params.tag_style ) .Params.tag_style }}
 	</div>
 
 	<!-- Show all zones -->
-	{{- partialCached "video-unit" (dict "context" $ "type" .Params.tag_singulier "types" $liste  "style" .Params.tag_style ) .Params.tag_singulier }}
+	{{- partialCached "video-unit" (dict "context" $ "type" .Params.tag_singulier "types" $liste  "style" .Params.tag_style ) .Params.tag_style }}
 
 </div>
 
