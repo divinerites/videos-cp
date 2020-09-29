@@ -3,7 +3,7 @@
 <div class="container">
 
 	<!-- Initialise les divers dictionnaires des axes -->
-	{{ $dict_tags := partial "axes-dict" . }}
+	{{ $dict_tags := partialCached "axes-dict" . }}
 	{{- $liste 	:= index $dict_tags .Params.tag_pluriel }}
 
 	<!-- AFFICHAGE -->
