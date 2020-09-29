@@ -1,7 +1,7 @@
 <div class="container">
 
    <!-- Initialise les divers dictionnaires des axes POUR MISSING-->
-{{ $dict_tags := partial "axes-dict" . }}
+{{ $dict_tags := partialCached "axes-dict.html" . }}
 {{- $saisons 	:= index $dict_tags "saisons" }}
 
 <!-- AFFICHAGE -->

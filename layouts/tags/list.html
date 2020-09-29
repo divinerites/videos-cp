@@ -3,7 +3,7 @@
 <div class="container">
 
 	<!-- Initialise les divers dictionnaires des axes -->
-	{{ $dict_tags := partialCached "axes-dict" . }}
+	{{ $dict_tags := partialCached "axes-dict.html" . }}
 	{{- $liste 	:= index $dict_tags .Params.tag_pluriel }}
 
 	<!-- AFFICHAGE -->
@@ -18,7 +18,7 @@
 	</div>
 
 	<!-- Show all zones -->
-	{{- partial "video-unit" (dict "context" $ "type" .Params.tag_singulier "types" $liste  "style" .Params.tag_style ) }}
+	{{- partialCached "video-unit" (dict "context" $ "type" .Params.tag_singulier "types" $liste  "style" .Params.tag_style ) .Params.tag_singulier }}
 
 </div>
 

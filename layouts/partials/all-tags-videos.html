@@ -1,7 +1,7 @@
 <div class="container">
 
    <!-- Initialise les divers dictionnaires des axes -->
-{{ $dict_tags := partial "axes-dict" . }}
+{{ $dict_tags := partialCached "axes-dict.html" . }}
 {{- $circuits 	:= index $dict_tags "circuits" }}
 {{- $dates 		:= index $dict_tags "dates" }}
 {{- $saisons 	:= index $dict_tags "saisons" }}
@@ -12,7 +12,7 @@
 <!-- AFFICHAGE -->
 <a id="top"></a>
 
-{{ partial "alert-download" . }}
+{{ partialCached "alert-download" . }}
 
 <!-- Affiche les tags -->
 <div class="tags">
@@ -27,11 +27,11 @@
 
 <!-- Show all zones si pas en page d'accueil -->
 {{ if not .IsHome }}
-   {{- partial "video-unit" (dict "context" $ "type" "circuit"  "types" $circuits  "style" "success") }}
-   {{- partial "video-unit" (dict "context" $ "type" "date"     "types" $dates     "style" "info") }}
-   {{- partial "video-unit" (dict "context" $ "type" "saison"   "types" $saisons   "style" "warning") }}
-   {{- partial "video-unit" (dict "context" $ "type" "variante" "types" $variantes "style" "primary") }}
-   {{- partial "video-unit" (dict "context" $ "type" "ville"    "types" $villes    "style" "danger") }}
-   {{- partial "video-unit" (dict "context" $ "type" "casino"   "types" $casinos   "style" "secondary") }}
+   {{- partialCached "video-unit" (dict "context" $ "type" "circuit"  "types" $circuits  "style" "success") "circuit" }}
+   {{- partialCached "video-unit" (dict "context" $ "type" "date"     "types" $dates     "style" "info") "date"}}
+   {{- partialCached "video-unit" (dict "context" $ "type" "saison"   "types" $saisons   "style" "warning") "saison"}}
+   {{- partialCached "video-unit" (dict "context" $ "type" "variante" "types" $variantes "style" "primary") "variante"}}
+   {{- partialCached "video-unit" (dict "context" $ "type" "ville"    "types" $villes    "style" "danger") "ville"}}
+   {{- partialCached "video-unit" (dict "context" $ "type" "casino"   "types" $casinos   "style" "secondary") "casino"}}
 {{ end }}
 </div>
