@@ -1570,6 +1570,7 @@ casino = "Rio"
 sixmax = false
 vo = false
 variante = "NLHE"
+buyin = 40000
 source = "DivxPoker"
 url = "https://1fichier.com/?ljeh5gdsj09knh79eyoq"
 [[items]]
@@ -1583,6 +1584,7 @@ casino = "Rio"
 sixmax = false
 vo = false
 variante = "NLHE"
+buyin = 40000
 source = "DivxPoker"
 url = "https://1fichier.com/?189vu5dzz6z3tpnjv70p"
 [[items]]
@@ -7514,7 +7516,7 @@ source = "Hors DivxPoker"
 url = "https://1fichier.com/?hhbc3986y5kjdpqy93ij"
 [[items]]
 saison = "WSOP 2009"
-episode = "Episode 5 : Ante Up For Africa Charity 1/2"
+episode = "Episode 5 : Ante Up For Africa Charity 1/2 (VO)"
 description = "World Series Of Poker"
 circuit =  "WSOP"
 date = "2009"
