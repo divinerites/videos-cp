@@ -7322,3 +7322,136 @@ variante = "NLHE"
 buyin = 10000
 source = "Hors DivxPoker"
 url = "https://1fichier.com/?9ryykuagu4zshtnc19t8"
+#
+# WPT - Grands Prix de Paris
+#
+[[items]]
+saison = "WPT Saison 03"
+episode = "Grand Prix de Paris ACF - Part 2 (VO)"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2005"
+ville = "Paris"
+casino = "Aviation Club de France"
+sixmax = false
+vo = true
+variante = "NLHE"
+source = "Hors DivxPoker - WorldPokerTour.TV"
+url = "https://1fichier.com/?ayy8emakfxkjckmuyoqi"
+[[items]]
+saison = "WPT Saison 10"
+episode = "Grand Prix de Paris ACF 1/3 (VO)"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2011"
+ville = "Paris"
+casino = "Aviation Club de France"
+sixmax = false
+vo = true
+variante = "NLHE"
+source = "Hors DivxPoker - WorldPokerTour.TV"
+url = "https://1fichier.com/?w7u4la2aesm2z59kdu5n"
+[[items]]
+saison = "WPT Saison 10"
+episode = "Grand Prix de Paris ACF 2/3 (VO)"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2011"
+ville = "Paris"
+casino = "Aviation Club de France"
+sixmax = false
+vo = true
+variante = "NLHE"
+source = "Hors DivxPoker - WorldPokerTour.TV"
+url = "https://1fichier.com/?f3643dn5c0bikazv40e5"
+[[items]]
+saison = "WPT Saison 10"
+episode = "Grand Prix de Paris ACF 3/3 (VO)"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2011"
+ville = "Paris"
+casino = "Aviation Club de France"
+sixmax = false
+vo = true
+variante = "NLHE"
+source = "Hors DivxPoker - WorldPokerTour.TV"
+url = "https://1fichier.com/?t37nx7lq96dz58caolq2"
+[[items]]
+saison = "WPT Saison 11"
+episode = "Grand Prix de Paris ACF 1/3 (VO)"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2012"
+ville = "Paris"
+casino = "Aviation Club de France"
+sixmax = false
+vo = true
+variante = "NLHE"
+source = "Hors DivxPoker - WorldPokerTour.TV"
+url = "https://1fichier.com/?omcwe59en2fheljombwn"
+[[items]]
+saison = "WPT Saison 11"
+episode = "Grand Prix de Paris ACF 2/3 (VO)"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2012"
+ville = "Paris"
+casino = "Aviation Club de France"
+sixmax = false
+vo = true
+variante = "NLHE"
+source = "Hors DivxPoker - WorldPokerTour.TV"
+url = "https://1fichier.com/?8arez3lsy2vz89dmcb88"
+[[items]]
+saison = "WPT Saison 11"
+episode = "Grand Prix de Paris ACF 3/3 (VO)"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2012"
+ville = "Paris"
+casino = "Aviation Club de France"
+sixmax = false
+vo = true
+variante = "NLHE"
+source = "Hors DivxPoker - WorldPokerTour.TV"
+url = "https://1fichier.com/?60ic672nvr6n1q58sr4b"
+[[items]]
+saison = "WPT Saison 12"
+episode = "Grand Prix de Paris ACF 1/3 (VO)"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2013"
+ville = "Paris"
+casino = "Aviation Club de France"
+sixmax = false
+vo = true
+variante = "NLHE"
+source = "Hors DivxPoker - WorldPokerTour.TV"
+url = "https://1fichier.com/?b7x95rr6fjr0wqjy821y"
+[[items]]
+saison = "WPT Saison 12"
+episode = "Grand Prix de Paris ACF 1/3 (VO)"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2013"
+ville = "Paris"
+casino = "Aviation Club de France"
+sixmax = false
+vo = true
+variante = "NLHE"
+source = "Hors DivxPoker - WorldPokerTour.TV"
+url = "https://1fichier.com/?clxobw6o38ure66q3hrk"
+[[items]]
+saison = "WPT Saison 12"
+episode = "Grand Prix de Paris ACF 1/3 (VO)"
+description = "World Poker Tour"
+circuit =  "WPT"
+date = "2013"
+ville = "Paris"
+casino = "Aviation Club de France"
+sixmax = false
+vo = true
+variante = "NLHE"
+source = "Hors DivxPoker - WorldPokerTour.TV"
+url = "https://1fichier.com/?m1l2tzitaei6oxws111r"
