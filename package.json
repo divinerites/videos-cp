@@ -4,12 +4,12 @@
   "devDependencies": {
    "@tailwindcss/typography": "github.com/bep/hugo-starter-tailwind-basic",
    "autoprefixer": "github.com/bep/hugo-starter-tailwind-basic",
+   "postcss": "github.com/bep/hugo-starter-tailwind-basic",
    "postcss-cli": "github.com/bep/hugo-starter-tailwind-basic",
    "postcss-purgecss": "github.com/bep/hugo-starter-tailwind-basic",
    "tailwindcss": "github.com/bep/hugo-starter-tailwind-basic"
   }
  },
- "dependencies": {},
  "devDependencies": {
   "@tailwindcss/typography": "^0.2.0",
   "autoprefixer": "~9.7.6",
