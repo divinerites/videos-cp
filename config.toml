@@ -30,7 +30,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
    [[module.imports]]
       path = "github.com/gohugoio/hugo-mod-jslibs/instantpage"
    [[module.imports]]
-      path = "github.com/bep/hugo-starter-tailwind-basic"
+      path = "github.com/bep/hugo-starter-tailwind-basic/v2"
       # hugo mod npm pack
       # npm install
    [[module.mounts]]

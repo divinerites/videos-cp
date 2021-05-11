@@ -2,21 +2,21 @@
  "comments": {
   "dependencies": {},
   "devDependencies": {
-   "@tailwindcss/typography": "github.com/bep/hugo-starter-tailwind-basic",
-   "autoprefixer": "github.com/bep/hugo-starter-tailwind-basic",
-   "postcss": "github.com/bep/hugo-starter-tailwind-basic",
-   "postcss-cli": "github.com/bep/hugo-starter-tailwind-basic",
-   "postcss-purgecss": "github.com/bep/hugo-starter-tailwind-basic",
-   "tailwindcss": "github.com/bep/hugo-starter-tailwind-basic"
+   "@tailwindcss/typography": "github.com/bep/hugo-starter-tailwind-basic/v2",
+   "autoprefixer": "github.com/bep/hugo-starter-tailwind-basic/v2",
+   "postcss": "github.com/bep/hugo-starter-tailwind-basic/v2",
+   "postcss-cli": "github.com/bep/hugo-starter-tailwind-basic/v2",
+   "postcss-purgecss": "github.com/bep/hugo-starter-tailwind-basic/v2",
+   "tailwindcss": "github.com/bep/hugo-starter-tailwind-basic/v2"
   }
  },
  "devDependencies": {
-  "@tailwindcss/typography": "^0.2.0",
-  "autoprefixer": "~9.7.6",
-  "postcss": "^8.0.9",
+  "@tailwindcss/typography": "^0.3.0",
+  "autoprefixer": "^10.0.4",
+  "postcss": "^8.1.10",
   "postcss-cli": "^8.0.0",
   "postcss-purgecss": "^2.0.3",
-  "tailwindcss": "^1.8.10"
+  "tailwindcss": "^2.0.1"
  },
  "name": "videos-clubpoker",
  "version": "0.1.0"
