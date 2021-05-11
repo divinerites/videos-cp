@@ -11,7 +11,7 @@ Ces données sont dans un fichier texte : `/data/items.toml`.
 1. Il vous suffit de modifier l'information désirée.
    Si besoin faire un recherche *(ctrl-F)* sur la page pour trouver rapidement la ligne concernée
 1. En bas de page indiquez la nature du changement, une fois celui ci effectué.
-1. Vaidez "Create a new branch and start a pull request".
+1. Validez "Create a new branch and start a pull request".
 1. Votre proposition sera examinée et intégrée dans le site. Ne vous inquiétez pas, vous ne pouvez rien casser.
 
 ## Organisation du fichier d'information sur les vidéos
