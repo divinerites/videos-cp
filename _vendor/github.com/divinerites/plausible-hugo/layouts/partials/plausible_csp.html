@@ -1,5 +1,0 @@
-{{- if site.Params.plausible.custom_js_domain -}}
-   https://{{ site.Params.plausible.custom_js_domain }}
-{{- else -}}
-   https://{{ default "plausible.io" site.Params.plausible.selfhosted_domain }}
-{{- end -}}
