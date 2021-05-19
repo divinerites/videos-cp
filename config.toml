@@ -53,7 +53,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 
 # Pour générer le _redirects pour Netlify avec /layout/index.redir
 [outputs]
-home = [ "HTML", "HEADERS" ]
+home = [ "HTML", "REDIR", "HEADERS" ]
 
 [mediaTypes]
 [mediaTypes."text/netlify"]
@@ -64,6 +64,11 @@ delimiter = ""
 [outputFormats.HEADERS]
 mediatype = "text/netlify"
 baseName = "_headers"
+isPlainText = true
+notAlternative = true
+[outputFormats.REDIR]
+mediatype = "text/netlify"
+baseName = "_redirects"
 isPlainText = true
 notAlternative = true
 
@@ -109,4 +114,5 @@ notAlternative = true
    [params.plausible]
       enable = true
       domain = "videos-cp"
-      # debug = true
+      proxy_netlify = true
+      debug = false
