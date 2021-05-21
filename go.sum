@@ -1,11 +1,14 @@
 github.com/aFarkas/lazysizes v0.0.0-20201024112805-22145e905e20 h1:bP/HD8jqvlEnWnvJ5D4vkAjtQLoFvhJbcZbyy5O8vnE=
 github.com/aFarkas/lazysizes v0.0.0-20201024112805-22145e905e20/go.mod h1:xl3heUINAn0oPowV1biDQ2Pyw1w3x66I7KEbWkaxox0=
+github.com/aFarkas/lazysizes v0.0.0-20210517092641-1523a4ff4579/go.mod h1:xl3heUINAn0oPowV1biDQ2Pyw1w3x66I7KEbWkaxox0=
 github.com/bep/hugo-starter-tailwind-basic/v2 v2.0.1 h1:++2Bmavm2LPUcES2bAxX3wL8q5N7tAJm9iTiIaLKBaQ=
 github.com/bep/hugo-starter-tailwind-basic/v2 v2.0.1/go.mod h1:uskmdVlDfz8aTjohnPUlsAfs5qFFTyfivqwsWXaQvgA=
 github.com/divinerites/divinerites-images-asset v1.2.0 h1:z8TI0Hwblt9K4ATDPAAObDE0YD8uTxtYIjSxs3mFnMw=
 github.com/divinerites/divinerites-images-asset v1.2.0/go.mod h1:qdzs2WfBl/DNlqptyKbohNlNGjuwU51A+j9ixLN3Ymc=
 github.com/divinerites/divinerites-lazyload v1.3.2 h1:GlyUWdC6nSGb4paYBQCf7+PuE+B3X0e6EXrTZTzSfGo=
 github.com/divinerites/divinerites-lazyload v1.3.2/go.mod h1:Ug1BAIgIgwwMxwUnjrq1WTmZrUXUpEIAGh7REwSGoEQ=
+github.com/divinerites/divinerites-lazyload v1.3.3 h1:Y3/sPup4Ls2IwpIze6Sh1gPAMFUqD2hOEBJItZm9rJc=
+github.com/divinerites/divinerites-lazyload v1.3.3/go.mod h1:cXneNcjzoA6IvM1E79WT8UnqrnAUPvrgBigK/ICEJks=
 github.com/divinerites/plausible-hugo v1.9.1 h1:g5/N0IGeI8a5/MfrHk4pLZM6Kv/SoTpu6w/2znMuHKU=
 github.com/divinerites/plausible-hugo v1.9.1/go.mod h1:cxr+YB3FUwbLon8KCs4pV4Ankbkq6lJxTQUpNb5KqPo=
 github.com/divinerites/plausible-hugo v1.10.3 h1:uIOmY9SFtLEkJzL6hCIxS9RCJ/ewgi1JBh0oKE1M4Gc=
