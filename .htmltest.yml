@@ -8,6 +8,8 @@ IgnoreURLs:
 - "googleapis.com"
 - "www.valdherens.ch"
 - "www.lagouille.com"
+IgnoreInternalURLs:
+- "/misc/js/script.js"
 IgnoreDirs:
 - "lib"
 - "revealjs"
