@@ -1,5 +1,6 @@
 github.com/aFarkas/lazysizes v0.0.0-20201024112805-22145e905e20 h1:bP/HD8jqvlEnWnvJ5D4vkAjtQLoFvhJbcZbyy5O8vnE=
 github.com/aFarkas/lazysizes v0.0.0-20201024112805-22145e905e20/go.mod h1:xl3heUINAn0oPowV1biDQ2Pyw1w3x66I7KEbWkaxox0=
+github.com/aFarkas/lazysizes v0.0.0-20210517092641-1523a4ff4579 h1:K8ukOfj0MOBEWWsL8Mzd8GXIbAf7/RHnX1hipqbjeto=
 github.com/aFarkas/lazysizes v0.0.0-20210517092641-1523a4ff4579/go.mod h1:xl3heUINAn0oPowV1biDQ2Pyw1w3x66I7KEbWkaxox0=
 github.com/bep/hugo-starter-tailwind-basic/v2 v2.0.1 h1:++2Bmavm2LPUcES2bAxX3wL8q5N7tAJm9iTiIaLKBaQ=
 github.com/bep/hugo-starter-tailwind-basic/v2 v2.0.1/go.mod h1:uskmdVlDfz8aTjohnPUlsAfs5qFFTyfivqwsWXaQvgA=
@@ -9,6 +10,8 @@ github.com/divinerites/divinerites-lazyload v1.3.2 h1:GlyUWdC6nSGb4paYBQCf7+PuE+
 github.com/divinerites/divinerites-lazyload v1.3.2/go.mod h1:Ug1BAIgIgwwMxwUnjrq1WTmZrUXUpEIAGh7REwSGoEQ=
 github.com/divinerites/divinerites-lazyload v1.3.3 h1:Y3/sPup4Ls2IwpIze6Sh1gPAMFUqD2hOEBJItZm9rJc=
 github.com/divinerites/divinerites-lazyload v1.3.3/go.mod h1:cXneNcjzoA6IvM1E79WT8UnqrnAUPvrgBigK/ICEJks=
+github.com/divinerites/divinerites-lazyload v1.3.4 h1:GzuiDRm2W8ZeIhsInRI7Y0wvoyw6RBEh1xqBRjs8rck=
+github.com/divinerites/divinerites-lazyload v1.3.4/go.mod h1:cXneNcjzoA6IvM1E79WT8UnqrnAUPvrgBigK/ICEJks=
 github.com/divinerites/plausible-hugo v1.9.1 h1:g5/N0IGeI8a5/MfrHk4pLZM6Kv/SoTpu6w/2znMuHKU=
 github.com/divinerites/plausible-hugo v1.9.1/go.mod h1:cxr+YB3FUwbLon8KCs4pV4Ankbkq6lJxTQUpNb5KqPo=
 github.com/divinerites/plausible-hugo v1.10.3 h1:uIOmY9SFtLEkJzL6hCIxS9RCJ/ewgi1JBh0oKE1M4Gc=
@@ -17,6 +20,8 @@ github.com/divinerites/plausible-hugo v1.10.4 h1:uoHZHmkPV7+E449qjFWdr/7asymRa1H
 github.com/divinerites/plausible-hugo v1.10.4/go.mod h1:cxr+YB3FUwbLon8KCs4pV4Ankbkq6lJxTQUpNb5KqPo=
 github.com/divinerites/plausible-hugo v1.11.0 h1:2m3IUptzPtZfRhaDRZri2WF+A6o4oTKeJDUB+mGNi0o=
 github.com/divinerites/plausible-hugo v1.11.0/go.mod h1:cxr+YB3FUwbLon8KCs4pV4Ankbkq6lJxTQUpNb5KqPo=
+github.com/divinerites/plausible-hugo v1.13.0 h1:80wjwlAqAx36vTd7L5c0OqAqXdbkbw/JfiYUnq1p2Yc=
+github.com/divinerites/plausible-hugo v1.13.0/go.mod h1:cxr+YB3FUwbLon8KCs4pV4Ankbkq6lJxTQUpNb5KqPo=
 github.com/gohugoio/hugo-mod-jslibs/instantpage v0.5.1 h1:Aig+0MOPXiuQNZpnxOMS4uwUsnyq41JnQzGW4Gk3o7Y=
 github.com/gohugoio/hugo-mod-jslibs/instantpage v0.5.1/go.mod h1:N4EUbbL7Cw4Yq+GHeK3MUSiOJQbzfuUFRyvBKvnVBR8=
 github.com/instantpage/instant.page v5.1.0+incompatible h1:/Z2XRXfY5HwuCN3TTqo56PaFyIlDr4l3tyytR/jGHXI=
