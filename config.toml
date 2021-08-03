@@ -115,4 +115,5 @@ notAlternative = true
       enable = true
       domain = "videos-cp"
       proxy_netlify = true
+      gitstar = false
       debug = false
