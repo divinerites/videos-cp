@@ -1,0 +1,5 @@
+# Gestion lazyload
+[params.global.lazyload]
+   enable = true
+   local = true
+   label = "lazy"

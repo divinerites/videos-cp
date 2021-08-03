@@ -1,0 +1,27 @@
+<!-- A utiliser si on fait du Lazyload des images -->
+{{- with site.Params.global.lazyload }}
+   {{- if .enable }}
+      {{- $isProd := hugo.IsProduction -}}
+
+      <!-- Choix de la bibliothèque de lazyloading -->
+      {{- if (eq .label "lazyload") }}
+         <!-- Move to footer from header -->
+         {{- $js := resources.Get "js/lazysizes/lazysizes.min.js" }}
+         {{- if $isProd }}
+            {{- $js = $js | minify | fingerprint "sha384" }}
+         {{- end }}
+         <script src="{{ $js.RelPermalink }}" {{ if $isProd }}integrity="{{ $js.Data.Integrity }}"{{ end }} async ></script>
+
+      {{- else }}
+         <!-- js scripts are in header (TODO : CHECK) -->
+         {{- $selector := .label }}
+         {{- $script := printf "js/footer_with_lazyload_%s.js" $selector }}
+         {{- $js := resources.Get $script }}
+         {{- if $isProd }}
+            {{- $js = $js | minify | fingerprint "sha384" }}
+         {{- end }}
+         <script src="{{ $js.RelPermalink }}" {{ if $isProd }}integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
+      {{- end }}
+
+   {{- end }}
+{{- end }}

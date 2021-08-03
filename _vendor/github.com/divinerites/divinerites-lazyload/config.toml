@@ -1,0 +1,13 @@
+# Gestion lazyload
+[params.global.lazyload]
+   enable = true
+   local = true
+   label = "lazy"
+
+[module]
+[[module.imports]]
+   path = "github.com/aFarkas/lazysizes"
+   disable = false
+   [[module.imports.mounts]]
+   source = "."
+   target = "assets/js/lazysizes"

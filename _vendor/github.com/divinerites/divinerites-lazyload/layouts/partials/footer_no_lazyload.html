@@ -1,0 +1,3 @@
+<!-- A utiliser si on ne fait pas de Lazyload des images -->
+{{- $script := resources.Get "js/footer_no_lazyload.js" | minify }}
+<script src="{{ $script.RelPermalink }}"></script>

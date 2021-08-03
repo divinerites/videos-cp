@@ -1,0 +1,7 @@
+# github.com/divinerites/plausible-hugo v1.15.4
+# github.com/divinerites/divinerites-lazyload v1.3.5
+# github.com/aFarkas/lazysizes v0.0.0-20210517092641-1523a4ff4579
+# github.com/divinerites/divinerites-images-asset v1.2.0
+# github.com/gohugoio/hugo-mod-jslibs/instantpage v0.5.1
+# github.com/instantpage/instant.page v5.1.0+incompatible
+# github.com/bep/hugo-starter-tailwind-basic/v2 v2.0.1

@@ -1,0 +1,41 @@
+{{- with site.Params.global.lazyload }}
+   {{- if .enable }}
+      {{- $isProd := hugo.IsProduction -}}
+
+      <!-- Choix de la bibliothèque de lazyloading -->
+      {{- if (eq .label "lazy")}}
+         <!-- github.com/verlok/vanilla-lazyload -->
+         {{- if .local }}
+            {{ printf "<!-- Lazyload : LOCAL github.com/verlok/vanilla-lazyload -->" | safeHTML }}
+            {{- $js0 := resources.Get "js/intersection-observer.js" }}
+            {{- $js1 := resources.Get "js/lazyload-17.3.1.min.js" }}
+            {{- $js := slice $js0 $js1 | resources.Concat "js/concat_lazyload_lazy.js" }}
+            {{- if $isProd }}
+               {{- $js = $js | minify | fingerprint "sha384" }}
+            {{- end }}
+            <script src="{{ $js.RelPermalink }}" {{ if $isProd }}integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
+         {{- else }}
+            {{ printf "<!-- Lazyload : https://cdn.jsdelivr.net/npm/vanilla-lazyload -->" | safeHTML }}
+            <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
+         {{- end }}
+
+      {{- else if (eq .label "lozad") }}
+         <!-- github.com/ApoorvSaxena/lozad.js -->
+         {{ printf "<!-- Lazyload : github.com/ApoorvSaxena/lozad.js -->" | safeHTML }}
+
+
+      {{- else if (eq .label "lazyload") }}
+         <!-- github.com/aFarkas/lazysizes -->
+         <!-- Move to footer from header -->
+         {{ printf "<!-- Lazyload : github.com/aFarkas/lazysizes -->" | safeHTML }}
+
+
+      {{- else }}
+         <!-- Label inconnu -->
+         {{- $_text := "[params.global.lazyload] : Ce label [%s] est inconnu. Utiliser `lazy`, `lozad` ou `lazyload`." }}
+         {{- errorf $_text .label }}
+      {{- end }}
+
+   {{- end }}
+{{- end }}
