@@ -2,6 +2,8 @@ github.com/aFarkas/lazysizes v0.0.0-20210517092641-1523a4ff4579 h1:K8ukOfj0MOBEW
 github.com/aFarkas/lazysizes v0.0.0-20210517092641-1523a4ff4579/go.mod h1:xl3heUINAn0oPowV1biDQ2Pyw1w3x66I7KEbWkaxox0=
 github.com/bep/hugo-starter-tailwind-basic/v2 v2.0.1 h1:++2Bmavm2LPUcES2bAxX3wL8q5N7tAJm9iTiIaLKBaQ=
 github.com/bep/hugo-starter-tailwind-basic/v2 v2.0.1/go.mod h1:uskmdVlDfz8aTjohnPUlsAfs5qFFTyfivqwsWXaQvgA=
+github.com/bep/hugo-starter-tailwind-basic/v2 v2.1.0 h1:Gc/99KUrAQkZlnoFcCaxWmYHmqzWgTSnYB+Pv4vNe4M=
+github.com/bep/hugo-starter-tailwind-basic/v2 v2.1.0/go.mod h1:uskmdVlDfz8aTjohnPUlsAfs5qFFTyfivqwsWXaQvgA=
 github.com/divinerites/divinerites-images-asset v1.2.0 h1:z8TI0Hwblt9K4ATDPAAObDE0YD8uTxtYIjSxs3mFnMw=
 github.com/divinerites/divinerites-images-asset v1.2.0/go.mod h1:qdzs2WfBl/DNlqptyKbohNlNGjuwU51A+j9ixLN3Ymc=
 github.com/divinerites/divinerites-lazyload v1.3.5 h1:CZXfvC8enmiWSfmpB19Ddrs/d43ZP8jKlLsuCv+2owM=
