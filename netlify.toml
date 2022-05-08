@@ -4,7 +4,7 @@ command = "hugo --minify"
 functions = "functions"
 
 [context.production.environment]
-HUGO_VERSION = "0.87.0"
+HUGO_VERSION = "0.97.3"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 TZ = "Europe/Zurich"
@@ -13,7 +13,7 @@ TZ = "Europe/Zurich"
 command = "hugo --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.87.0"
+HUGO_VERSION = "0.97.3"
 HUGO_ENABLEGITINFO = "true"
 TZ = "Europe/Zurich"
 
@@ -21,7 +21,7 @@ TZ = "Europe/Zurich"
 command = "hugo -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.87.0"
+HUGO_VERSION = "0.97.3"
 HUGO_ENABLEGITINFO = "true"
 TZ = "Europe/Zurich"
 
