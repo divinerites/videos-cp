@@ -10,6 +10,8 @@ github.com/divinerites/divinerites-lazyload v1.3.5 h1:CZXfvC8enmiWSfmpB19Ddrs/d4
 github.com/divinerites/divinerites-lazyload v1.3.5/go.mod h1:cXneNcjzoA6IvM1E79WT8UnqrnAUPvrgBigK/ICEJks=
 github.com/divinerites/plausible-hugo v1.15.4 h1:sxJrtCjOPFYpMFG6E0LmfeXM4mMA4rY9cpDc36Ff6gQ=
 github.com/divinerites/plausible-hugo v1.15.4/go.mod h1:cxr+YB3FUwbLon8KCs4pV4Ankbkq6lJxTQUpNb5KqPo=
+github.com/divinerites/plausible-hugo v1.16.0 h1:ISjiOcx0jpG3BHVgmO8bnrVMHRialwjye0AT0k5PA/o=
+github.com/divinerites/plausible-hugo v1.16.0/go.mod h1:cxr+YB3FUwbLon8KCs4pV4Ankbkq6lJxTQUpNb5KqPo=
 github.com/gohugoio/hugo-mod-jslibs/instantpage v0.5.1 h1:Aig+0MOPXiuQNZpnxOMS4uwUsnyq41JnQzGW4Gk3o7Y=
 github.com/gohugoio/hugo-mod-jslibs/instantpage v0.5.1/go.mod h1:N4EUbbL7Cw4Yq+GHeK3MUSiOJQbzfuUFRyvBKvnVBR8=
 github.com/instantpage/instant.page v5.1.0+incompatible h1:/Z2XRXfY5HwuCN3TTqo56PaFyIlDr4l3tyytR/jGHXI=
