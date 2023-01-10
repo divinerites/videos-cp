@@ -3065,6 +3065,21 @@ buyin = 10000
 variante = "NLHE"
 source = "Bonus"
 url = "https://1fichier.com/?0p5vhxjdoxpkxal9fybd"
+
+[[items]]
+saison = "WSOP 2002"
+episode = "Main Event 2002 Day 5"
+description = "World Series Of Poker"
+circuit =  "WSOP"
+date = "2002"
+ville = "Las Vegas"
+casino = "Binion's Horseshoe Casino"
+vo = true
+sixmax = false
+buyin = 10000
+variante = "NLHE"
+source = "CP"
+url = "https://1fichier.com/?k4bi6dvem03r0ofr2j6w"
 [[items]]
 saison = "WSOP 2002"
 episode = "Main Event 2002 Final Table"
